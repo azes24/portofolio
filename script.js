@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. ANIMASI PEMBUKA "PAPER UNFOLD" (HANYA SAAT PERTAMA KALI MASUK WEBSITE)
     // Menggunakan sessionStorage agar saat berpindah halaman (Home, Profile, About), animasi pembuka tidak berulang
     const paperContainer = document.getElementById("paper-container");
+    const navbar = document.querySelector(".navbar");
     const hasEnteredSite = sessionStorage.getItem("portfolio_entered");
 
     if (paperContainer) {
@@ -23,12 +24,19 @@ document.addEventListener("DOMContentLoaded", () => {
             // Pertama kali buka website di session ini: Jalankan animasi Paper Unfold penuh
             lenis.stop();
 
+            if (navbar) {
+                gsap.set(navbar, { opacity: 0 });
+            }
+
             const tl = gsap.timeline({
                 onComplete: () => {
                     lenis.start();
                     document.body.style.backgroundColor = "var(--bg-paper)";
                     // Simpan status bahwa user sudah masuk situs
                     sessionStorage.setItem("portfolio_entered", "true");
+                    if (navbar) {
+                        navbar.style.opacity = "1";
+                    }
                 }
             });
 
@@ -49,12 +57,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 duration: 1.35,
                 ease: "power4.inOut"
             });
+
+            if (navbar) {
+                tl.to(navbar, {
+                    opacity: 1,
+                    duration: 0.4,
+                    ease: "power2.out"
+                }, "-=0.3");
+            }
         } else {
             // Saat berpindah halaman: Langsung tampilkan koran tanpa menunggu/memutar unfold
+            if (navbar) {
+                navbar.style.opacity = "1";
+            }
             gsap.set(paperContainer, {
-                y: "0vh",
-                scale: 1,
-                rotation: 0,
+                clearProps: "transform,willChange",
                 opacity: 1
             });
             document.body.style.backgroundColor = "var(--bg-paper)";
@@ -94,7 +111,106 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 4. DRAGGABLE CAROUSEL DENGAN EFEK VELOCITY SKEW (Halaman index.html)
+    // 4. SMART NAVBAR (HIDE ON SCROLL DOWN, REVEAL ON SCROLL UP)
+    if (navbar) {
+        let lastScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+        let isNavHidden = false;
+
+        const handleNavbarScroll = (currentY, direction) => {
+            // Jika berada di dekat bagian paling atas (<= 25px)
+            if (currentY <= 25) {
+                if (isNavHidden) {
+                    navbar.classList.remove("nav-hidden");
+                    isNavHidden = false;
+                }
+                navbar.classList.remove("nav-scrolled");
+                return;
+            }
+
+            // Tambahkan shadow paper saat halaman discroll
+            navbar.classList.add("nav-scrolled");
+
+            // Direction: > 0 = scroll ke bawah, < 0 = scroll ke atas
+            if (direction > 0 && currentY > 80) {
+                // Scroll ke bawah: sembunyikan navbar (tertinggal di atas)
+                if (!isNavHidden) {
+                    navbar.classList.add("nav-hidden");
+                    isNavHidden = true;
+                }
+            } else if (direction < 0) {
+                // Scroll ke atas: langsung tampilkan navbar kembali
+                if (isNavHidden) {
+                    navbar.classList.remove("nav-hidden");
+                    isNavHidden = false;
+                }
+            }
+        };
+
+        // Integrasi dengan Lenis smooth scroll
+        if (typeof lenis !== "undefined") {
+            lenis.on("scroll", (e) => {
+                handleNavbarScroll(e.scroll, e.direction);
+                lastScrollY = e.scroll;
+            });
+        }
+
+        // Fallback untuk native window scroll
+        window.addEventListener("scroll", () => {
+            const currentY = window.pageYOffset || document.documentElement.scrollTop || 0;
+            const diff = currentY - lastScrollY;
+            if (Math.abs(diff) > 3) {
+                handleNavbarScroll(currentY, diff > 0 ? 1 : -1);
+                lastScrollY = currentY;
+            }
+        }, { passive: true });
+    }
+
+    // 5. INTERACTIVE 3-PHOTO PROFILE SWITCHER
+    // Tiga foto profil asli Fathul Aziz Saifuddin dengan status awal berbeda di setiap halaman
+    const profilePhotos = [
+        "images/profile/profil-0.webp",
+        "images/profile/profil-1.webp",
+        "images/profile/profil-2.webp"
+    ];
+
+    // Preload ketiga foto agar pergantian foto instan tanpa jeda
+    profilePhotos.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+    });
+
+    const profileWrappers = document.querySelectorAll(".interactive-profile-wrapper");
+    profileWrappers.forEach((wrapper) => {
+        const switchPhoto = () => {
+            const img = wrapper.querySelector(".interactive-profile-img") || wrapper.querySelector("img");
+            if (!img) return;
+
+            let curIdx = parseInt(img.getAttribute("data-profile-index"));
+            if (isNaN(curIdx)) curIdx = 0;
+            const nextIdx = (curIdx + 1) % profilePhotos.length;
+
+            // Transisi fade-out halus
+            img.classList.add("is-switching");
+
+            setTimeout(() => {
+                img.src = profilePhotos[nextIdx];
+                img.setAttribute("data-profile-index", nextIdx.toString());
+
+                // Transisi fade-in
+                img.classList.remove("is-switching");
+            }, 140);
+        };
+
+        wrapper.addEventListener("click", switchPhoto);
+        wrapper.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                switchPhoto();
+            }
+        });
+    });
+
+    // 6. DRAGGABLE CAROUSEL DENGAN EFEK VELOCITY SKEW (Halaman index.html)
     const viewport = document.getElementById("carouselViewport");
     const track = document.getElementById("carouselTrack");
     const cards = document.querySelectorAll(".slide-card");

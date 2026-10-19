@@ -53,7 +53,7 @@ a {
 
 #main-wrapper {
     width: 100%;
-    overflow: hidden;
+    overflow-x: clip;
     background-color: #111;
 }
 
@@ -62,11 +62,10 @@ a {
     width: 100%;
     min-height: 100vh;
     transform-origin: center top;
-    will-change: transform;
 }
 
 /* ==========================================================================
-   1. HEADER / NAVBAR
+   1. HEADER / NAVBAR (SEMI-STICKY SMART HEADER)
    ========================================================================== */
 .navbar {
     display: grid;
@@ -74,10 +73,29 @@ a {
     align-items: center;
     padding: 24px 36px;
     border-bottom: var(--border-line);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     background-color: var(--bg-paper);
-    z-index: 100;
+    z-index: 500;
+    transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.navbar.nav-hidden {
+    transform: translateY(-100%);
+}
+
+.navbar.nav-scrolled {
+    box-shadow: 0 4px 20px rgba(28, 28, 25, 0.16);
+}
+
+.navbar-spacer {
+    height: 80px;
+    width: 100%;
+    flex-shrink: 0;
 }
 
 .nav-left {
@@ -348,6 +366,104 @@ a {
     height: 480px;
 }
 
+/* ==========================================================================
+   INTERACTIVE PROFILE PHOTO SWITCHER & AUTHOR BADGE
+   ========================================================================== */
+.interactive-profile-wrapper {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    user-select: none;
+    background-color: var(--bg-paper);
+    background-image: url('images/profile/back.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.interactive-profile-wrapper:hover {
+    box-shadow: 0 8px 24px rgba(28, 28, 25, 0.2);
+}
+
+.interactive-profile-wrapper:focus-visible {
+    outline: 2px solid var(--accent-orange);
+    outline-offset: 3px;
+}
+
+.interactive-profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: drop-shadow(0 8px 20px rgba(20, 20, 18, 0.48)) drop-shadow(0 2px 6px rgba(20, 20, 18, 0.32));
+    transition: opacity 0.22s ease, transform 0.25s ease, filter 0.25s ease;
+}
+
+.interactive-profile-wrapper:hover .interactive-profile-img {
+    transform: scale(1.02);
+    filter: drop-shadow(0 14px 28px rgba(20, 20, 18, 0.58)) drop-shadow(0 3px 8px rgba(20, 20, 18, 0.35));
+}
+
+.interactive-profile-img.is-switching {
+    opacity: 0.15 !important;
+    transform: scale(0.96) !important;
+}
+
+.photo-switch-pill {
+    display: none !important;
+}
+
+/* Author block for profile.html & work.html hero */
+.profile-hero-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border-line);
+}
+
+.profile-author-avatar {
+    width: 90px;
+    height: 110px;
+    flex-shrink: 0;
+    border: 1.5px solid var(--ink-dark);
+    border-radius: 4px;
+    position: relative;
+}
+
+.profile-author-avatar .photo-switch-pill {
+    padding: 3px 8px;
+    font-size: 0.62rem;
+    bottom: 6px;
+    gap: 4px;
+}
+
+.profile-author-avatar .photo-switch-pill i {
+    font-size: 0.75rem;
+}
+
+.profile-author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profile-author-name {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    line-height: 1;
+    letter-spacing: 0.03em;
+}
+
+.profile-author-desc {
+    font-family: var(--font-editorial);
+    font-size: 0.95rem;
+    color: var(--ink-muted);
+}
+
 .dropcap-paragraph {
     font-family: var(--font-editorial);
     font-size: 1.65rem;
@@ -527,6 +643,12 @@ a {
     transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
+.cta-text-b {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
 .oval-cta .cta-arrow {
     position: absolute;
     font-size: 3.2rem;
@@ -541,6 +663,10 @@ a {
 }
 
 .oval-cta:hover .cta-text {
+    transform: translateX(180%);
+}
+
+.oval-cta:hover .cta-text-b {
     transform: translateX(180%);
 }
 
@@ -1954,6 +2080,91 @@ a {
 }
 
 /* ==========================================================================
+   INTERACTIVE PROFILE PHOTO SWITCHER
+   ========================================================================== */
+.interactive-profile-wrapper {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.45) 0%, rgba(28, 28, 25, 0.08) 100%);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
+}
+
+.interactive-profile-wrapper:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 6px 16px rgba(28, 28, 25, 0.18);
+}
+
+.interactive-profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: opacity 0.25s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.25s ease;
+    display: block;
+}
+
+.interactive-profile-img.is-switching {
+    opacity: 0.2;
+    transform: scale(0.96);
+}
+
+.photo-switch-pill {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background-color: var(--ink-dark);
+    color: var(--bg-paper);
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    padding: 5px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--bg-paper);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    transition: all 0.25s ease;
+    z-index: 5;
+}
+
+.photo-switch-pill i {
+    font-size: 0.95rem;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.interactive-profile-wrapper:hover .photo-switch-pill {
+    background-color: var(--accent-orange);
+    color: #fff;
+    border-color: #fff;
+}
+
+.photo-switch-pill-sm {
+    padding: 3px 8px;
+    font-size: 0.72rem;
+    bottom: 8px;
+    right: 8px;
+}
+
+/* Profile Page Header Author Layout */
+.profile-hero-author {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 20px;
+}
+
+.profile-author-avatar {
+    width: 110px;
+    height: 130px;
+    flex-shrink: 0;
+    border: 1.5px solid var(--ink-dark);
+    box-shadow: 4px 4px 0px rgba(28, 28, 25, 0.15);
+}
+
+/* ==========================================================================
    COMPREHENSIVE RESPONSIVE DESIGN (<= 768px & <= 480px)
    ========================================================================== */
 @media (max-width: 768px) {
@@ -1980,6 +2191,10 @@ a {
 
     .paper-logo {
         font-size: 1.15rem !important;
+    }
+
+    .navbar-spacer {
+        height: 60px !important;
     }
 
     /* Global Section Padding on Mobile */
@@ -2020,6 +2235,18 @@ a {
         font-size: clamp(2.2rem, 11vw, 4rem) !important;
         white-space: normal !important;
         line-height: 0.95 !important;
+    }
+
+    .profile-hero-author {
+        flex-direction: row !important;
+        gap: 14px !important;
+        align-items: center !important;
+        margin-bottom: 16px !important;
+    }
+
+    .profile-author-avatar {
+        width: 85px !important;
+        height: 105px !important;
     }
 
     .awards-title-split .stamp-box h2,

@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="icon.webp">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=newspaper">
 </head>
 
 <body>
@@ -54,23 +54,24 @@
         </div>
     </div>
 
+    <!-- 1. TOP NAVIGATION BAR (SEMI-STICKY) -->
+    <header class="navbar">
+        <div class="nav-left">Gresik, ID</div>
+        <div class="nav-center">
+            <a href="index.html" class="paper-logo">Fathul Aziz Saifuddin</a>
+        </div>
+        <div class="nav-right">
+            <button id="openNavBtn" class="burger-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
     <!-- Main Wrapper untuk Paper Unfold & Smooth Scroll -->
     <div id="main-wrapper">
         <main id="paper-container">
-
-            <!-- 1. TOP NAVIGATION BAR -->
-            <header class="navbar">
-                <div class="nav-left">Gresik, ID</div>
-                <div class="nav-center">
-                    <a href="index.html" class="paper-logo">Fathul Aziz Saifuddin</a>
-                </div>
-                <div class="nav-right">
-                    <button id="openNavBtn" class="burger-btn" aria-label="Menu">
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </header>
+            <div class="navbar-spacer"></div>
 
             <!-- 2. ABOUT HERO SECTION -->
             <section class="about-page-hero">
@@ -80,9 +81,9 @@
 
                 <div class="about-intro-grid">
                     <div class="about-intro-left">
-                        <div class="img-wrapper portrait-editorial">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80"
-                                alt="Fathul Aziz Saifuddin Editorial Portrait">
+                        <div class="img-wrapper portrait-editorial interactive-profile-wrapper" role="button" tabindex="0" title="Klik untuk berganti foto profil" aria-label="Klik untuk berganti foto profil" style="background-image: url('images/profile/back.webp'); background-size: cover; background-position: center;">
+                            <img src="images/profile/profil-1.webp"
+                                alt="Fathul Aziz Saifuddin Editorial Portrait" class="interactive-profile-img" data-profile-index="1">
                         </div>
                         <span class="caption-text">FIG 01. — FATHUL AZIZ SAIFUDDIN (DUKUN, GRESIK, JAWA TIMUR)</span>
                     </div>

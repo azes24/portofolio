@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="icon.webp">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=newspaper">
 </head>
 
 <body>
@@ -50,23 +50,24 @@
         </div>
     </div>
 
+    <!-- 1. TOP NAVIGATION BAR (SEMI-STICKY) -->
+    <header class="navbar">
+        <div class="nav-left">Gresik, ID</div>
+        <div class="nav-center">
+            <a href="index.html" class="paper-logo">Fathul Aziz Saifuddin</a>
+        </div>
+        <div class="nav-right">
+            <button id="openNavBtn" class="burger-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
     <!-- Main Wrapper untuk Paper Unfold & Smooth Scroll -->
     <div id="main-wrapper">
         <main id="paper-container">
-
-            <!-- 1. TOP NAVIGATION BAR -->
-            <header class="navbar">
-                <div class="nav-left">Gresik, ID</div>
-                <div class="nav-center">
-                    <a href="index.html" class="paper-logo">Fathul Aziz Saifuddin</a>
-                </div>
-                <div class="nav-right">
-                    <button id="openNavBtn" class="burger-btn" aria-label="Menu">
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </header>
+            <div class="navbar-spacer"></div>
 
             <!-- 2. WORK HERO & ARCHIVE CONTROLS -->
             <section class="work-hero-section">
@@ -75,6 +76,15 @@
                         <h1>PROFILE</h1>
                     </div>
                     <div class="work-header-meta">
+                        <div class="profile-hero-author">
+                            <div class="interactive-profile-wrapper profile-author-avatar" role="button" tabindex="0" title="Klik untuk berganti foto profil" aria-label="Klik untuk berganti foto profil" style="background-image: url('images/profile/back.webp'); background-size: cover; background-position: center;">
+                                <img src="images/profile/profil-2.webp" alt="Fathul Aziz Saifuddin" class="interactive-profile-img" data-profile-index="2">
+                            </div>
+                            <div class="profile-author-info">
+                                <span class="profile-author-name">FATHUL AZIZ SAIFUDDIN</span>
+                                <span class="profile-author-desc">Informatics Student · Web Dev &amp; Multimedia</span>
+                            </div>
+                        </div>
                         <p class="editorial-sub">Rekam jejak praktikum, rekayasa web,<br>desain multimedia & kepemimpinan (2021 — 2027)</p>
                         <div style="margin-top: 14px;">
                             <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="github-pill-btn">
@@ -393,7 +403,7 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80"
+                                    <img src="images/awards/videografi.webp"
                                         alt="Videografi PRODISTIK ITS">
                                 </div>
                                 <div class="spine-details">

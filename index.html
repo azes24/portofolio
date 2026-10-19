@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="icon.webp">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=newspaper">
 </head>
 
 <body>
@@ -56,23 +56,24 @@
         </div>
     </div>
 
+    <!-- 1. TOP NAVIGATION BAR (HEADER KORAN - SEMI STICKY) -->
+    <header class="navbar" id="home">
+        <div class="nav-left">Gresik, ID</div>
+        <div class="nav-center">
+            <span class="paper-logo">Fathul Aziz Saifuddin</span>
+        </div>
+        <div class="nav-right">
+            <button id="openNavBtn" class="burger-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
     <!-- Wrapper Utama untuk Animasi Unfold & Smooth Scroll -->
     <div id="main-wrapper">
         <main id="paper-container">
-
-            <!-- 1. TOP NAVIGATION BAR (HEADER KORAN) -->
-            <header class="navbar" id="home">
-                <div class="nav-left">Gresik, ID</div>
-                <div class="nav-center">
-                    <span class="paper-logo">Fathul Aziz Saifuddin</span>
-                </div>
-                <div class="nav-right">
-                    <button id="openNavBtn" class="burger-btn" aria-label="Menu">
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </header>
+            <div class="navbar-spacer"></div>
 
             <!-- 2. TOP FEATURED SLIDER (3 KOLOM) & HERO BANNER -->
             <section class="top-showcase">
@@ -80,8 +81,7 @@
                     <!-- Item 1 -->
                     <article class="news-card">
                         <div class="img-wrapper">
-                            <img src="images/awards/praktikum-web.webp"
-                                alt="Asisten Praktikum Web UTM">
+                            <img src="images/awards/praktikum-web.webp" alt="Asisten Praktikum Web UTM">
                         </div>
                         <h3 class="card-title">ASISTEN PRAKTIKUM <span class="badge-new">UTM</span></h3>
                         <p class="card-desc">Asisten praktikum resmi S1 Teknik Informatika UTM (Pengembangan Aplikasi
@@ -102,8 +102,7 @@
                     <!-- Item 3 -->
                     <article class="news-card">
                         <div class="img-wrapper">
-                            <img src="images/awards/infografis.webp"
-                                alt="Desain Infografis Juara 2">
+                            <img src="images/awards/infografis.webp" alt="Desain Infografis Juara 2">
                         </div>
                         <h3 class="card-title">INFOGRAFIS JUARA 2 <span class="badge-new">PRESTASI</span></h3>
                         <p class="card-desc">Juara 2 Lomba Desain Infografis Universitas Trunodjoyo Madura,
@@ -121,9 +120,8 @@
             <section class="about-section" id="about">
                 <div class="about-left">
                     <h2 class="interactive-title">INFORMATICS<br><span>DEVELOPER!</span></h2>
-                    <div class="img-wrapper tall-img">
-                        <img src="images/profile/fathul-aziz.webp"
-                            alt="Fathul Aziz Saifuddin">
+                    <div class="img-wrapper tall-img interactive-profile-wrapper" role="button" tabindex="0" title="Klik untuk berganti foto profil" aria-label="Klik untuk berganti foto profil" style="background-image: url('images/profile/back.webp'); background-size: cover; background-position: center;">
+                        <img src="images/profile/profil-0.webp" alt="Fathul Aziz Saifuddin" class="interactive-profile-img" data-profile-index="0">
                     </div>
                     <p class="dropcap-paragraph">
                         <span class="dropcap">S</span>aya adalah mahasiswa S1 Teknik Informatika Universitas Trunodjoyo
@@ -134,8 +132,7 @@
 
                 <div class="about-right">
                     <div class="img-wrapper wide-img">
-                        <img src="images/profile/workspace.webp"
-                            alt="Web Development Desk">
+                        <img src="images/profile/workspace.webp" alt="Web Development Desk">
                     </div>
                     <div class="roles-list">
                         <h2>ASISTEN PRAKTIKUM WEB & STRUKTUR DATA</h2>
@@ -167,16 +164,15 @@
                             </div>
                             <div class="upcoming-feature-card">
                                 <div class="img-wrapper">
-                                    <img src="images/projects/ilsah-madura.webp"
-                                        alt="Website Resmi ILSAH Madura">
+                                    <img src="images/projects/ilsah-madura.webp" alt="Website Resmi ILSAH Madura">
                                 </div>
                                 <h4>WEB ILSAH MADURA <span class="badge-new">ORGANISASI</span></h4>
-                                <p>Website resmi organisasi Ikatan Alumni Santri Tarbiyatut Tholabah (ILSAH) Madura — pusat warta kegiatan, struktur kepengurusan, dan jejaring alumni.</p>
+                                <p>Website resmi organisasi Ikatan Alumni Santri Tarbiyatut Tholabah (ILSAH) Madura —
+                                    pusat warta kegiatan, struktur kepengurusan, dan jejaring alumni.</p>
                             </div>
                         </div>
                         <div class="img-wrapper large-showcase-img">
-                            <img src="images/profile/matrix-code.webp"
-                                alt="Coding & Data Matrix">
+                            <img src="images/profile/matrix-code.webp" alt="Coding & Data Matrix">
                         </div>
                     </div>
 
@@ -256,8 +252,7 @@
                         <!-- Slide 1: NEXLAB -->
                         <article class="news-card slide-card">
                             <div class="img-wrapper">
-                                <img src="images/projects/nexlab.webp"
-                                    alt="NEXLAB Virtual Lab">
+                                <img src="images/projects/nexlab.webp" alt="NEXLAB Virtual Lab">
                             </div>
                             <h3 class="card-title">NEXLAB <span class="badge-new">FEATURED</span></h3>
                             <p class="card-desc">Laboratorium virtual integrasi kearifan lokal jamu Madura dengan sains.
@@ -267,8 +262,7 @@
                         <!-- Slide 2: Madurese Folklore Hub -->
                         <article class="news-card slide-card">
                             <div class="img-wrapper">
-                                <img src="images/projects/folklore-hub.webp"
-                                    alt="Madurese Folklore Hub">
+                                <img src="images/projects/folklore-hub.webp" alt="Madurese Folklore Hub">
                             </div>
                             <h3 class="card-title">FOLKLORE HUB <span class="badge-new">EDUKASI</span></h3>
                             <p class="card-desc">Platform interaktif edukatif cerita rakyat & pelestarian budaya Madura
@@ -282,7 +276,7 @@
                             <div
                                 style="display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 220px; margin: 0 auto;">
                                 <a href="profile.html" class="oval-cta" style="padding: 8px 16px; font-size: 0.75rem;">
-                                    <span class="cta-text">LIHAT PROFIL & PROYEK</span>
+                                    <span class="cta-text-b">LIHAT PROFIL & PROYEK</span>
                                     <i class="ri-arrow-right-line cta-arrow"></i>
                                 </a>
                                 <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer"
@@ -296,19 +290,18 @@
                         <!-- Slide 4: Website ILSAH Madura -->
                         <article class="news-card slide-card">
                             <div class="img-wrapper">
-                                <img src="images/projects/ilsah-madura.webp"
-                                    alt="Website ILSAH Madura">
+                                <img src="images/projects/ilsah-madura.webp" alt="Website ILSAH Madura">
                             </div>
                             <h3 class="card-title">WEB ILSAH MADURA <span class="badge-new">ORGANISASI</span></h3>
-                            <p class="card-desc">Website organisasi santri Tarbiyatut Tholabah berbasis PHP, MySQL, CSS &
+                            <p class="card-desc">Website organisasi santri Tarbiyatut Tholabah berbasis PHP, MySQL, CSS
+                                &
                                 JS.</p>
                         </article>
 
                         <!-- Slide 5: UNIPUSTAKA -->
                         <article class="news-card slide-card">
                             <div class="img-wrapper">
-                                <img src="images/projects/unipustaka.webp"
-                                    alt="UNIPUSTAKA Perpustakaan">
+                                <img src="images/projects/unipustaka.webp" alt="UNIPUSTAKA Perpustakaan">
                             </div>
                             <h3 class="card-title">UNIPUSTAKA <span class="badge-new">SISTEM</span></h3>
                             <p class="card-desc">Sistem informasi peminjaman perpustakaan dengan portal login mahasiswa
