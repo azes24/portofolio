@@ -523,7 +523,7 @@ a {
 
 .oval-cta .cta-text {
     font-family: var(--font-display);
-    font-size: 2rem;
+    font-size: 3rem;
     transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
