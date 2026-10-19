@@ -2170,11 +2170,16 @@ a {
 @media (max-width: 768px) {
 
     html,
-    body,
+    body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+    }
+
     #main-wrapper,
     #paper-container {
-        overflow-x: clip;
-        max-width: 100vw;
+        overflow-x: hidden !important;
+        max-width: 100% !important;
+        width: 100% !important;
     }
 
     /* Navbar on Mobile */
@@ -2182,7 +2187,7 @@ a {
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
-        padding: 16px 18px !important;
+        padding: 14px 18px !important;
     }
 
     .nav-left {
@@ -2191,10 +2196,14 @@ a {
 
     .paper-logo {
         font-size: 1.15rem !important;
+        max-width: 80% !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
     }
 
     .navbar-spacer {
-        height: 60px !important;
+        height: 56px !important;
     }
 
     /* Global Section Padding on Mobile */
@@ -2209,65 +2218,247 @@ a {
     .work-hero-section,
     .bookshelf-section,
     .featured-projects-section,
-    .work-bottom-feature {
+    .work-bottom-feature,
+    .clients-section {
         padding-left: 18px !important;
         padding-right: 18px !important;
     }
 
-    /* Giant Titles: Never overflow screen */
+    /* Giant Titles & Hero Banner: Never overflow screen or clip ascenders/descenders */
     .giant-miranda {
-        font-size: clamp(2rem, 11vw, 4.2rem) !important;
+        font-size: clamp(2rem, 10.5vw, 3.8rem) !important;
         white-space: normal !important;
-        line-height: 0.95 !important;
-        word-break: break-word;
+        line-height: 1.02 !important;
+        word-break: break-word !important;
     }
 
     .hero-banner {
-        padding: 14px 10px 8px !important;
-        margin-top: 16px;
+        padding: 12px 10px 8px !important;
+        margin-top: 18px !important;
+        overflow: hidden !important;
     }
 
-    .all-work-heading {
-        font-size: 2.8rem !important;
+    /* Stamp Boxes & Banners: Scaling font and preventing text cutoff */
+    .stamp-box {
+        padding: 8px 14px 4px !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
     }
 
-    .work-stamp h1 {
-        font-size: clamp(2.2rem, 11vw, 4rem) !important;
-        white-space: normal !important;
-        line-height: 0.95 !important;
-    }
-
-    .profile-hero-author {
-        flex-direction: row !important;
-        gap: 14px !important;
-        align-items: center !important;
-        margin-bottom: 16px !important;
-    }
-
-    .profile-author-avatar {
-        width: 85px !important;
-        height: 105px !important;
-    }
-
+    .stamp-box h1,
+    .stamp-box h2,
+    .work-stamp h1,
+    .project-stamp h2,
     .awards-title-split .stamp-box h2,
-    .outline-big-title,
     .talk-card .stamp-box h2 {
+        font-size: clamp(1.7rem, 7.8vw, 2.8rem) !important;
+        white-space: normal !important;
+        line-height: 1.02 !important;
+        word-break: break-word !important;
+        letter-spacing: 0.02em !important;
+    }
+
+    .stamp-banner {
+        grid-template-columns: 1fr auto !important;
+        gap: 14px !important;
+        margin-bottom: 24px !important;
+        align-items: center !important;
+    }
+
+    .stamp-icon {
+        font-size: clamp(2.4rem, 8vw, 4rem) !important;
+        padding-right: 6px !important;
+    }
+
+    .outline-big-title {
         font-size: clamp(1.8rem, 8.5vw, 3.2rem) !important;
         white-space: normal !important;
         line-height: 1 !important;
     }
 
+    /* Top Showcase & 3-Col Grid: Clean spacing & dividers between cards */
+    .top-showcase {
+        padding-top: 20px !important;
+        padding-bottom: 28px !important;
+    }
+
+    .three-col-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+        padding-bottom: 24px !important;
+    }
+
+    .three-col-grid .news-card {
+        padding: 24px 0 !important;
+        border-right: none !important;
+    }
+
+    .three-col-grid .news-card:first-child {
+        padding-top: 0 !important;
+        padding-bottom: 24px !important;
+        border-bottom: var(--border-line) !important;
+    }
+
+    .three-col-grid .center-highlight {
+        border-left: none !important;
+        border-right: none !important;
+        border-top: none !important;
+        border-bottom: var(--border-line) !important;
+        padding: 26px 0 !important;
+        gap: 16px !important;
+    }
+
+    .three-col-grid .news-card:last-child {
+        padding-top: 24px !important;
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+    }
+
+    .all-work-heading {
+        font-size: clamp(2.4rem, 8vw, 3.2rem) !important;
+        line-height: 1 !important;
+    }
+
+    .featured-sub {
+        font-size: clamp(1.3rem, 4.5vw, 1.65rem) !important;
+        line-height: 1.25 !important;
+    }
+
+    /* Card Titles & Badges: Wrap gracefully without overflowing */
+    .card-title {
+        font-size: 1.45rem !important;
+        flex-wrap: wrap !important;
+        gap: 6px 10px !important;
+        line-height: 1.15 !important;
+        align-items: center !important;
+    }
+
+    .badge-new {
+        font-size: 0.8rem !important;
+        padding: 2px 6px !important;
+    }
+
+    .card-desc {
+        font-size: 1.1rem !important;
+        line-height: 1.38 !important;
+    }
+
+    /* About Section (index.html) */
+    .about-section {
+        padding-top: 28px !important;
+        padding-bottom: 36px !important;
+    }
+
+    .about-left {
+        margin-bottom: 32px !important;
+    }
+
     .interactive-title {
-        font-size: 2.4rem !important;
+        font-size: 2.3rem !important;
+        line-height: 1 !important;
+        margin-bottom: 18px !important;
     }
 
     .interactive-title span {
-        font-size: 3rem !important;
+        font-size: 2.8rem !important;
+        text-underline-offset: 6px !important;
+    }
+
+    .dropcap {
+        font-size: 2.6rem !important;
+        line-height: 0.85 !important;
+        padding: 4px 8px !important;
+        margin-right: 10px !important;
+        margin-top: 2px !important;
+        margin-bottom: 2px !important;
+    }
+
+    .dropcap-paragraph {
+        font-size: 1.25rem !important;
+        line-height: 1.4 !important;
+        margin-top: 16px !important;
     }
 
     .roles-list h2 {
         font-size: 1.25rem !important;
         line-height: 1.3 !important;
+        padding: 10px 0 !important;
+    }
+
+    /* Website Highlight & Upcoming Section (1-Column layout with proper spacing) */
+    .website-highlight {
+        padding-top: 28px !important;
+        padding-bottom: 36px !important;
+    }
+
+    .upcoming-top-row {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .upcoming-info h3 {
+        font-size: clamp(2rem, 7vw, 2.6rem) !important;
+        line-height: 1 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .upcoming-info p {
+        font-size: 1.3rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .upcoming-feature-card {
+        border-top: var(--border-line);
+        padding-top: 20px;
+    }
+
+    .upcoming-feature-card h4 {
+        font-size: 1.35rem !important;
+        flex-wrap: wrap !important;
+        display: flex !important;
+        gap: 6px 8px !important;
+        align-items: center !important;
+    }
+
+    .upcoming-left {
+        margin-bottom: 32px !important;
+    }
+
+    .think-title {
+        font-size: clamp(1.8rem, 6vw, 2.4rem) !important;
+        margin-bottom: 12px !important;
+        line-height: 1.05 !important;
+    }
+
+    .think-title span {
+        font-size: clamp(2.2rem, 8.5vw, 3.2rem) !important;
+        margin-top: 4px !important;
+    }
+
+    .body-copy {
+        font-size: 1.2rem !important;
+        line-height: 1.4 !important;
+        margin: 16px 0 !important;
+    }
+
+    .github-hero-cta {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+        font-size: 1.05rem !important;
+        padding: 12px 14px !important;
+        box-sizing: border-box !important;
+    }
+
+    .oval-cta {
+        height: 85px !important;
+        padding: 0 20px !important;
+    }
+
+    .oval-cta .cta-text {
+        font-size: clamp(1.6rem, 5.5vw, 2.2rem) !important;
+        white-space: nowrap !important;
     }
 
     /* Realistic mobile image heights */
@@ -2282,33 +2473,6 @@ a {
         height: 190px !important;
     }
 
-    /* Featured Projects Grid on Mobile */
-    .projects-grid {
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-    }
-
-    .project-img-wrapper {
-        height: 200px !important;
-    }
-
-    .project-title {
-        font-size: 1.6rem !important;
-    }
-
-    .project-desc {
-        font-size: 1.1rem !important;
-    }
-
-    .project-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .project-btn {
-        justify-content: center;
-    }
-
     /* Awards Bar on Mobile */
     .awards-bar {
         grid-template-columns: 1fr 1fr !important;
@@ -2319,8 +2483,8 @@ a {
 
     .award-item {
         border-right: none !important;
-        border-bottom: var(--border-line);
-        padding-bottom: 12px;
+        border-bottom: var(--border-line) !important;
+        padding: 8px 0 12px !important;
     }
 
     .award-item:last-child {
@@ -2329,9 +2493,201 @@ a {
         padding-bottom: 0 !important;
     }
 
+    .award-text span {
+        font-size: 0.78rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .award-text h4 {
+        font-size: 1.25rem !important;
+        line-height: 1 !important;
+    }
+
+    .award-num {
+        font-size: 2.2rem !important;
+    }
+
+    .award-num.award-text-num {
+        font-size: 1.35rem !important;
+    }
+
+    /* Carousel / Draggable Work Section & Slide Cards */
+    .draggable-work-section {
+        padding-top: 28px !important;
+        padding-bottom: 36px !important;
+    }
+
+    .slider-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+        font-size: 0.85rem !important;
+        margin-bottom: 16px !important;
+    }
+
+    .slide-card {
+        width: min(300px, 82vw) !important;
+        padding: 0 14px !important;
+    }
+
+    .slide-card .img-wrapper img {
+        height: 180px !important;
+    }
+
+    .slide-card.center-highlight {
+        border-left: none !important;
+        padding: 0 14px !important;
+        gap: 14px !important;
+    }
+
+    .slide-card .all-work-heading {
+        font-size: clamp(2rem, 6.5vw, 2.5rem) !important;
+    }
+
+    .slide-card .featured-sub {
+        font-size: clamp(1.15rem, 3.8vw, 1.4rem) !important;
+    }
+
+    /* Fix Slide 3 text cut off inside oval-cta */
+    .slide-card .oval-cta {
+        height: auto !important;
+        min-height: 44px !important;
+        border-radius: 999px !important;
+        padding: 10px 14px !important;
+        max-width: 100% !important;
+    }
+
+    .slide-card .cta-text-b {
+        font-size: 0.95rem !important;
+        white-space: normal !important;
+        text-align: center !important;
+        line-height: 1.2 !important;
+    }
+
+    .slide-card .github-pill-btn {
+        font-size: 0.85rem !important;
+        padding: 8px 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Profile / Work Hero & Author Meta */
+    .work-hero-section {
+        padding-top: 24px !important;
+        padding-bottom: 32px !important;
+    }
+
+    .profile-hero-author {
+        flex-direction: row !important;
+        gap: 14px !important;
+        align-items: center !important;
+        margin-bottom: 16px !important;
+    }
+
+    .profile-author-avatar {
+        width: 80px !important;
+        height: 100px !important;
+    }
+
+    .profile-author-name {
+        font-size: 1.2rem !important;
+    }
+
+    .profile-author-desc {
+        font-size: 0.95rem !important;
+    }
+
+    .github-pill-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+        font-size: 0.95rem !important;
+        padding: 10px 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    .view-toggle {
+        margin-top: 14px !important;
+        flex-wrap: wrap !important;
+        gap: 8px 12px !important;
+    }
+
+    /* Featured Projects Grid on Mobile */
+    .featured-projects-section {
+        padding-top: 28px !important;
+        padding-bottom: 36px !important;
+    }
+
+    .projects-header-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    .project-card {
+        border: 1.5px solid var(--ink-dark) !important;
+    }
+
+    .project-img-wrapper {
+        height: 200px !important;
+    }
+
+    .project-body {
+        padding: 20px 18px !important;
+    }
+
+    .project-title {
+        font-size: 1.5rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .project-desc {
+        font-size: 1.05rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .project-actions {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+    }
+
+    .project-btn {
+        justify-content: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 10px 16px !important;
+        font-size: 0.95rem !important;
+    }
+
+    .project-local-badge {
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
     /* Bookshelf Accordion / Spine on Mobile */
+    .bookshelf-section {
+        padding-top: 24px !important;
+        padding-bottom: 36px !important;
+    }
+
+    .bookshelf-instruction {
+        flex-direction: column !important;
+        gap: 6px !important;
+        font-size: 0.88rem !important;
+        padding-bottom: 12px !important;
+    }
+
     .spine-header {
-        grid-template-columns: 46px 1fr 28px !important;
+        grid-template-columns: 44px 1fr 24px !important;
         padding: 14px 10px !important;
         gap: 8px !important;
     }
@@ -2347,10 +2703,12 @@ a {
     .spine-title {
         font-size: 1.15rem !important;
         gap: 6px !important;
+        flex-wrap: wrap !important;
+        line-height: 1.2 !important;
     }
 
     .spine-icon {
-        font-size: 1.4rem !important;
+        font-size: 1.3rem !important;
     }
 
     .book-spine.active .spine-content {
@@ -2360,7 +2718,7 @@ a {
     .spine-inner-grid {
         grid-template-columns: 1fr !important;
         gap: 16px !important;
-        padding: 16px 12px !important;
+        padding: 16px 10px !important;
     }
 
     .spine-inner-grid .img-wrapper img {
@@ -2368,7 +2726,8 @@ a {
     }
 
     .spine-details h3 {
-        font-size: 1.4rem !important;
+        font-size: 1.35rem !important;
+        line-height: 1.2 !important;
     }
 
     .spine-details p {
@@ -2376,23 +2735,131 @@ a {
         line-height: 1.4 !important;
     }
 
-    /* Carousel Cards on Mobile */
-    .slide-card {
-        width: min(300px, 80vw) !important;
-        padding: 0 14px !important;
+    .spine-tags {
+        font-size: 0.9rem !important;
     }
 
-    /* Publications / Amanah Grid */
-    .pub-grid {
+    /* Work Bottom Feature & Talk Card */
+    .work-bottom-feature {
         grid-template-columns: 1fr !important;
-        gap: 14px !important;
+        gap: 0 !important;
+        padding-top: 24px !important;
+        padding-bottom: 36px !important;
     }
 
-    /* Awards Ledger (about.html) on Mobile */
+    .work-feature-left {
+        border-right: none !important;
+        padding-right: 0 !important;
+        padding-bottom: 28px !important;
+    }
+
+    .work-feature-title {
+        font-size: clamp(1.8rem, 6.5vw, 2.4rem) !important;
+        line-height: 1.1 !important;
+        margin-bottom: 12px !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        align-items: baseline !important;
+    }
+
+    .work-feature-right {
+        border-left: none !important;
+        border-top: var(--border-line) !important;
+        padding-left: 0 !important;
+        padding-top: 32px !important;
+        margin-top: 0 !important;
+    }
+
+    .talk-lead {
+        font-size: clamp(1.35rem, 4.5vw, 1.75rem) !important;
+        line-height: 1.3 !important;
+    }
+
+    /* About Page Hero & CV Section (about.html) */
+    .about-page-hero {
+        padding-top: 20px !important;
+        padding-bottom: 36px !important;
+    }
+
+    .about-intro-grid {
+        margin-top: 24px !important;
+    }
+
+    .about-intro-left {
+        margin-bottom: 24px !important;
+    }
+
+    .editorial-lead {
+        font-size: 1.55rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .about-columns-text {
+        margin-top: 18px !important;
+    }
+
+    .opportunity-box {
+        padding: 20px 16px !important;
+        margin-top: 28px !important;
+    }
+
+    .opp-header h3 {
+        font-size: clamp(1.6rem, 5.5vw, 2.2rem) !important;
+    }
+
+    .opp-sub {
+        font-size: 1.1rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .cv-actions-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+    }
+
+    .download-cv-btn,
+    .preview-cv-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+        font-size: 1.05rem !important;
+        padding: 12px 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    .cv-meta-pill {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        font-size: 0.95rem !important;
+        line-height: 1.35 !important;
+    }
+
+    .cv-meta-pill i {
+        margin-top: 2px !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* Awards Ledger (about.html) Structured 2-row grid */
+    .selected-awards-section {
+        padding-top: 28px !important;
+        padding-bottom: 36px !important;
+    }
+
+    .awards-title-split {
+        margin-bottom: 24px !important;
+        gap: 16px !important;
+    }
+
     .ledger-row {
-        grid-template-columns: 50px 1fr 24px !important;
-        padding: 12px 6px !important;
-        gap: 6px !important;
+        display: grid !important;
+        grid-template-columns: 46px 1fr auto !important;
+        grid-template-rows: auto auto !important;
+        gap: 4px 10px !important;
+        padding: 14px 6px !important;
+        align-items: center !important;
     }
 
     .ledger-row:hover {
@@ -2400,16 +2867,105 @@ a {
     }
 
     .ledger-year {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
         font-size: 1rem !important;
     }
 
     .ledger-org {
-        font-size: 1.1rem !important;
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        font-size: 1.15rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .ledger-row i {
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+        font-size: 1.25rem !important;
+        justify-self: end !important;
     }
 
     .ledger-achievement {
-        font-size: 0.95rem !important;
         grid-column: 2 / -1 !important;
+        grid-row: 2 !important;
+        font-size: 1rem !important;
+        line-height: 1.35 !important;
+        color: var(--ink-muted) !important;
+    }
+
+    /* Publications / Amanah Grid (about.html) */
+    .publications-section {
+        padding-top: 28px !important;
+        padding-bottom: 36px !important;
+    }
+
+    .pub-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        margin-bottom: 24px !important;
+        padding-bottom: 12px !important;
+    }
+
+    .pub-header h2 {
+        font-size: clamp(2rem, 7vw, 2.8rem) !important;
+    }
+
+    .pub-header p {
+        font-size: 1.15rem !important;
+    }
+
+    .pub-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    .pub-item {
+        padding: 14px 16px !important;
+        gap: 14px !important;
+    }
+
+    .pub-num {
+        font-size: 1.8rem !important;
+    }
+
+    .pub-meta h4 {
+        font-size: 1.15rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .pub-meta p {
+        font-size: 1rem !important;
+    }
+
+    /* Clients / Partners Section (about.html) */
+    .clients-section {
+        padding-top: 28px !important;
+        padding-bottom: 36px !important;
+    }
+
+    .clients-left {
+        margin-bottom: 24px !important;
+    }
+
+    .clients-left h2 {
+        font-size: clamp(2.4rem, 8vw, 3.8rem) !important;
+    }
+
+    .clients-left p {
+        font-size: 1.2rem !important;
+    }
+
+    .clients-right {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    .client-logo-box {
+        font-size: 1.25rem !important;
+        min-height: 75px !important;
+        padding: 8px !important;
     }
 
     /* Marquee on Mobile */
@@ -2472,20 +3028,18 @@ a {
     }
 
     .dropcap-paragraph {
-        font-size: 1.2rem !important;
+        font-size: 1.15rem !important;
     }
 
     .editorial-lead {
-        font-size: 1.65rem !important;
+        font-size: 1.45rem !important;
     }
 
     .body-copy {
         font-size: 1.1rem !important;
     }
 
-    .download-cv-btn {
-        width: 100% !important;
-        justify-content: center !important;
-        font-size: 1.1rem !important;
+    .clients-right {
+        grid-template-columns: 1fr !important;
     }
 }
