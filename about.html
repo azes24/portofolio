@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Fathul Aziz Saifuddin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SVG Paper Noise Texture Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Fullscreen Navigation Overlay -->
+    <div class="fullscreen-nav" id="fullscreenNav">
+        <div class="nav-top">
+            <span>Gresik, Jawa Timur</span>
+            <button id="closeNavBtn" class="icon-btn" aria-label="Tutup Menu"><i class="ri-close-line"></i></button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-item">Index</a></li>
+            <li><a href="work.html" class="nav-item">Experience & Projects</a></li>
+            <li><a href="about.html" class="nav-item active-page">About</a></li>
+        </ul>
+        <div class="nav-socials">
+            <a href="https://wa.me/6285731037913" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line"></i> whatsapp</a> ·
+            <a href="https://instagram.com/azesfx_" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line"></i> instagram (@azesfx_)</a> ·
+            <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i> github (@azes24)</a> ·
+            <a href="#" class="share-web-btn"><i class="ri-share-forward-line"></i> share link</a>
+        </div>
+    </div>
+
+    <!-- Main Wrapper untuk Paper Unfold & Smooth Scroll -->
+    <div id="main-wrapper">
+        <main id="paper-container">
+
+            <!-- 1. TOP NAVIGATION BAR -->
+            <header class="navbar">
+                <div class="nav-left">Gresik, ID</div>
+                <div class="nav-center">
+                    <a href="index.html" class="paper-logo">Fathul Aziz Saifuddin</a>
+                </div>
+                <div class="nav-right">
+                    <button id="openNavBtn" class="burger-btn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- 2. ABOUT HERO SECTION -->
+            <section class="about-page-hero">
+                <div class="hero-banner">
+                    <h1 class="giant-miranda">ABOUT AZIZ</h1>
+                </div>
+
+                <div class="about-intro-grid">
+                    <div class="about-intro-left">
+                        <div class="img-wrapper portrait-editorial">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80"
+                                alt="Fathul Aziz Saifuddin Editorial Portrait">
+                        </div>
+                        <span class="caption-text">FIG 01. — FATHUL AZIZ SAIFUDDIN (DUKUN, GRESIK, JAWA TIMUR)</span>
+                    </div>
+
+                    <div class="about-intro-right">
+                        <h2 class="editorial-lead">
+                            Mahasiswa S1 Teknik Informatika <u>Universitas Trunodjoyo Madura</u>, Asisten Praktikum,
+                            Admin Lab & <u>Multimedia Designer</u>.
+                        </h2>
+
+                        <div class="about-columns-text">
+                            <p class="dropcap-paragraph">
+                                <span class="dropcap">S</span>aya berdedikasi dalam rekayasa perangkat lunak yang kokoh
+                                serta penyajian informasi visual yang komunikatif, diperkuat rekam jejak sebagai asisten
+                                praktikum (Web, Struktur Data, Alpro) dan admin Lab ID Eksak UTM.
+                            </p>
+                            <p class="body-copy">
+                                Terbiasa memimpin organisasi mahasiswa sebagai Ketua Umum ILSAH Madura, menggerakkan
+                                Divisi Humas & Infokom UKM Triple-C, serta mengoordinasikan berbagai kepanitiaan
+                                nasional dan regional. Menguasai pemrograman web modern, database, serta produksi
+                                multimedia mulai dari infografis berprestasi hingga videografi.
+                            </p>
+                        </div>
+
+                        <!-- FITUR DOWNLOAD CV (Classified Ad Style) -->
+                        <div class="opportunity-box" id="cv-download-section">
+                            <div class="opp-header">
+                                <span class="badge-new">DOKUMEN RESMI</span>
+                                <h3>CURRICULUM VITAE (CV)</h3>
+                            </div>
+                            <p class="opp-sub">
+                                <strong>Dokumen Terverifikasi & ATS-Friendly.</strong> Memuat ringkasan profesional,
+                                riwayat asisten praktikum (Web, Struktur Data, Alpro), jabatan organisasi, kepanitiaan,
+                                prestasi nasional, serta daftar keahlian teknis & multimedia lengkap.
+                            </p>
+                            <div class="cv-actions-row">
+                                <a href="CV_Fathul_Aziz_Saifuddin.pdf" download="CV_Fathul_Aziz_Saifuddin.pdf"
+                                    class="download-cv-btn" id="downloadCvBtn">
+                                    <i class="ri-download-cloud-2-line"></i> UNDUH CV RESMI (PDF)
+                                </a>
+                                <a href="cv_preview.html" target="_blank" class="preview-cv-btn">
+                                    <i class="ri-file-text-line"></i> LIHAT / CETAK CV
+                                </a>
+                                <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="preview-cv-btn">
+                                    <i class="ri-github-fill"></i> GITHUB: @azes24 <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                            <div class="cv-meta-pill">
+                                <i class="ri-checkbox-circle-fill"></i> Format PDF A4 ATS-Friendly · Diperbarui 2026 ·
+                                Siap untuk Rekrutmen & Asistensi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. SELECTED AWARDS! TABLE SECTION -->
+            <section class="selected-awards-section">
+                <div class="awards-title-split">
+                    <div class="stamp-box">
+                        <h2>PRESTASI</h2>
+                    </div>
+                    <h2 class="outline-big-title">AWARDS!</h2>
+                </div>
+
+                <div class="awards-ledger">
+                    <div class="ledger-row">
+                        <span class="ledger-year">2026</span>
+                        <span class="ledger-org">SORE 2 NATIONAL COMPETITION</span>
+                        <span class="ledger-achievement">Bronze Medal Essay — Kompetisi Esai Ilmiah Tingkat
+                            Nasional</span>
+                        <i class="ri-medal-line"></i>
+                    </div>
+                    <div class="ledger-row">
+                        <span class="ledger-year">2026</span>
+                        <span class="ledger-org">UNIVERSITAS TRUNODJOYO MADURA</span>
+                        <span class="ledger-achievement">Juara 2 Lomba Desain Infografis — Tingkat Universitas</span>
+                        <i class="ri-trophy-line"></i>
+                    </div>
+                    <div class="ledger-row">
+                        <span class="ledger-year">2026</span>
+                        <span class="ledger-org">UNIVERSITAS TRUNODJOYO MADURA</span>
+                        <span class="ledger-achievement">Juara 3 Tim Seleksi Internal LIDM (Lomba Inovasi Digital
+                            Mahasiswa)</span>
+                        <i class="ri-award-line"></i>
+                    </div>
+                    <div class="ledger-row">
+                        <span class="ledger-year">2023</span>
+                        <span class="ledger-org">PRODISTIK ITS</span>
+                        <span class="ledger-achievement">Finalis Lomba Videografi — Program Terapan TIK Kerjasama
+                            ITS</span>
+                        <i class="ri-film-line"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. PENGALAMAN ORGANISASI, ASISTENSI & KEPANITIAAN (INDEX 1 - 13) -->
+            <section class="publications-section">
+                <div class="pub-header">
+                    <h2>PENGALAMAN & AMANAH</h2>
+                    <p>Asisten Praktikum, Kepemimpinan Organisasi, Kepanitiaan & Riset (2021 — 2027)</p>
+                </div>
+
+                <div class="pub-grid">
+                    <div class="pub-item">
+                        <span class="pub-num">01.</span>
+                        <div class="pub-meta">
+                            <h4>UTM — GASAL 2026/2027</h4>
+                            <p>Asisten Praktikum Pengembangan Aplikasi Web</p>
+                        </div>
+                    </div>
+                    <div class="pub-item">
+                        <span class="pub-num">02.</span>
+                        <div class="pub-meta">
+                            <h4>UTM — GENAP 2025/2026</h4>
+                            <p>Asisten Praktikum Struktur Data</p>
+                        </div>
+                    </div>
+                    <div class="pub-item">
+                        <span class="pub-num">03.</span>
+                        <div class="pub-meta">
+                            <h4>UTM — GASAL 2025/2026</h4>
+                            <p>Asisten Praktikum Algoritma & Pemrograman</p>
+                        </div>
+                    </div>
+                    <div class="pub-item">
+                        <span class="pub-num">04.</span>
+                        <div class="pub-meta">
+                            <h4>LAB ID EKSAK UTM — 2026</h4>
+                            <p>Admin Laboratorium ID Eksak</p>
+                        </div>
+                    </div>
+                    <div class="pub-item">
+                        <span class="pub-num">05.</span>
+                        <div class="pub-meta">
+                            <h4>ILSAH MADURA — 2025/2026</h4>
+                            <p>Ketua Umum Ikatan Mahasiswa Santri</p>
+                        </div>
+                    </div>
+                    <div class="pub-item">
+                        <span class="pub-num">06.</span>
+                        <div class="pub-meta">
+                            <h4>UKM TRIPLE-C — 2026</h4>
+                            <p>Pengurus Divisi Humas & Infokom</p>
+                        </div>
+                    </div>
+                    <div class="pub-item">
+                        <span class="pub-num">07.</span>
+                        <div class="pub-meta">
+                            <h4>GEMA LOWAYU — 2026</h4>
+                            <p>Divisi Komunikasi & Informasi (Kominfo)</p>
+                        </div>
+                    </div>
+                    <div class="pub-item">
+                        <span class="pub-num">08.</span>
+                        <div class="pub-meta">
+                            <h4>WARGALAB UTM — 2025</h4>
+                            <p>Anggota Komunitas Laboratorium</p>
+                        </div>
+                    </div>
+                    <div class="pub-item">
+                        <span class="pub-num">09.</span>
+                        <div class="pub-meta">
+                            <h4>TCC UKM TRIPLE-C — 2025/2026</h4>
+                            <p>Steering Committee & Koordinator Sie PDD</p>
+                        </div>
+                    </div>
+                    <div class="pub-item">
+                        <span class="pub-num">10.</span>
+                        <div class="pub-meta">
+                            <h4>TRIPLE-C × GDGoC UTM — 2026</h4>
+                            <p>Anggota Sie PDD Creative Summit</p>
+                        </div>
+                    </div>
+                    <div class="pub-item">
+                        <span class="pub-num">11.</span>
+                        <div class="pub-meta">
+                            <h4>PONPES TARBIYATUT THOLABAH — 2022/2023</h4>
+                            <p>Tutor Baca Kitab Al-Miftah</p>
+                        </div>
+                    </div>
+                    <div class="pub-item">
+                        <span class="pub-num">12.</span>
+                        <div class="pub-meta">
+                            <h4>PRODISTIK ITS — 2021/2023</h4>
+                            <p>Program Pendidikan Vokasi Terapan TIK</p>
+                        </div>
+                    </div>
+                    <div class="pub-item">
+                        <span class="pub-num">13.</span>
+                        <div class="pub-meta">
+                            <h4>PERS AN-NASHIHAH — 2022/2023</h4>
+                            <p>Sekretaris & Redaksi Penerbitan Majalah</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. AFILIASI & ORGANISASI PARTNERS -->
+            <section class="clients-section">
+                <div class="clients-left">
+                    <span class="hurrah-tag">KOLABORASI</span>
+                    <h2>AFILIASI &<br>ORGANISASI</h2>
+                    <p>Aktif berkontribusi di entitas kampus, laboratorium rekayasa, UKM Creative Computer, dan
+                        organisasi mahasiswa.</p>
+                </div>
+                <div class="clients-right">
+                    <div class="client-logo-box">UTM MADURA</div>
+                    <div class="client-logo-box">UKM TRIPLE-C</div>
+                    <div class="client-logo-box">ILSAH MADURA</div>
+                    <div class="client-logo-box">WARGALAB</div>
+                    <div class="client-logo-box">GEMA LOWAYU</div>
+                    <div class="client-logo-box">PRODISTIK ITS</div>
+                    <div class="client-logo-box">Lembaga Pers Siswa</div>
+                    <div class="client-logo-box">MATABAH Media</div>
+                </div>
+            </section>
+
+            <!-- 6. INFINITE MARQUEE CTA & FOOTER -->
+            <section class="marquee-section">
+                <div class="marquee-track">
+                    <div class="marquee-content">
+                        <span>Mari berkolaborasi & terhubung <a href="mailto:f.azizsyaifuddin@gmail.com"
+                                class="email-badge">HUBUNGI SAYA</a></span>
+                        <span>Mari berkolaborasi & terhubung <a href="mailto:f.azizsyaifuddin@gmail.com"
+                                class="email-badge">HUBUNGI SAYA</a></span>
+                        <span>Mari berkolaborasi & terhubung <a href="mailto:f.azizsyaifuddin@gmail.com"
+                                class="email-badge">HUBUNGI SAYA</a></span>
+                        <span>Mari berkolaborasi & terhubung <a href="mailto:f.azizsyaifuddin@gmail.com"
+                                class="email-badge">HUBUNGI SAYA</a></span>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div class="footer-left">
+                    <strong>FATHUL AZIZ SAIFUDDIN©</strong>
+                    <span>Dukun, Gresik, Jawa Timur</span>
+                </div>
+                <div class="footer-right footer-icons">
+                    <a href="https://wa.me/6285731037913" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" title="WhatsApp (0857-3103-7913)" aria-label="WhatsApp">
+                        <i class="ri-whatsapp-line"></i>
+                    </a>
+                    <a href="https://instagram.com/azesfx_" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" title="Instagram (@azesfx_)" aria-label="Instagram">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" title="GitHub (@azes24)" aria-label="GitHub">
+                        <i class="ri-github-fill"></i>
+                    </a>
+                    <button class="footer-icon-btn share-web-btn" title="Bagikan Web Ini" aria-label="Share Web Link">
+                        <i class="ri-share-forward-line"></i>
+                    </button>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- Libraries: Lenis & GSAP -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

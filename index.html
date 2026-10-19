@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fathul Aziz Saifuddin — Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SVG Paper Noise Texture Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Peringatan Rotasi Layar untuk Mobile Portrait Kecil -->
+    <div class="rotate-warning">
+        <p>Please rotate your device<br>to ensure a better experience.</p>
+    </div>
+
+    <!-- Navigasi Fullscreen Overlay -->
+    <div class="fullscreen-nav" id="fullscreenNav">
+        <div class="nav-top">
+            <span>Gresik, Jawa Timur</span>
+            <button id="closeNavBtn" class="icon-btn" aria-label="Tutup Menu"><i class="ri-close-line"></i></button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-item">Index</a></li>
+            <li><a href="work.html" class="nav-item">Experience & Projects</a></li>
+            <li><a href="about.html" class="nav-item">About</a></li>
+        </ul>
+        <div class="nav-socials">
+            <a href="https://wa.me/6285731037913" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line"></i> whatsapp</a> ·
+            <a href="https://instagram.com/azesfx_" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line"></i> instagram (@azesfx_)</a> ·
+            <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i> github (@azes24)</a> ·
+            <a href="#" class="share-web-btn"><i class="ri-share-forward-line"></i> share link</a>
+        </div>
+    </div>
+
+    <!-- Wrapper Utama untuk Animasi Unfold & Smooth Scroll -->
+    <div id="main-wrapper">
+        <main id="paper-container">
+
+            <!-- 1. TOP NAVIGATION BAR (HEADER KORAN) -->
+            <header class="navbar" id="index">
+                <div class="nav-left">Gresik, ID</div>
+                <div class="nav-center">
+                    <span class="paper-logo">Fathul Aziz Saifuddin</span>
+                </div>
+                <div class="nav-right">
+                    <button id="openNavBtn" class="burger-btn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- 2. TOP FEATURED SLIDER (3 KOLOM) & HERO BANNER -->
+            <section class="top-showcase">
+                <div class="three-col-grid">
+                    <!-- Item 1 -->
+                    <article class="news-card">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+                                alt="Pengembangan Aplikasi Web">
+                        </div>
+                        <h3 class="card-title">WEB PRAKTIKUM <span class="badge-new">NEW</span></h3>
+                        <p class="card-desc">Sistem dan asistensi praktikum pengembangan aplikasi web di S1 Teknik Informatika UTM, memfasilitasi mahasiswa dalam penguasaan frontend, backend & database.</p>
+                    </article>
+
+                    <!-- Item 2 (Center Highlight: Explicit GitHub Link) -->
+                    <article class="news-card center-highlight">
+                        <h2 class="all-work-heading">EXPLORE!</h2>
+                        <p class="featured-sub">Experience & Projects –<br>Asisten Praktikum,<br>Web & Multimedia.</p>
+                        <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="github-pill-btn">
+                            <i class="ri-github-fill"></i> GITHUB: @azes24 <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </article>
+
+                    <!-- Item 3 -->
+                    <article class="news-card">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+                                alt="Desain Infografis Juara 2">
+                        </div>
+                        <h3 class="card-title">INFOGRAFIS JUARA 2 <span class="badge-new">PRESTASI</span></h3>
+                        <p class="card-desc">Juara 2 Lomba Desain Infografis Universitas Trunodjoyo Madura, menggabungkan visualisasi data ilmiah dengan estetika tipografi editorial modern.</p>
+                    </article>
+                </div>
+
+                <!-- Giant Inverted Headline -->
+                <div class="hero-banner">
+                    <h1 class="giant-miranda">FATHUL AZIZ</h1>
+                </div>
+            </section>
+
+            <!-- 3. BIO & POSITIONING ("INFORMATICS DEVELOPER!") -->
+            <section class="about-section" id="about">
+                <div class="about-left">
+                    <h2 class="interactive-title">INFORMATICS<br><span>DEVELOPER!</span></h2>
+                    <div class="img-wrapper tall-img">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80"
+                            alt="Fathul Aziz Saifuddin">
+                    </div>
+                    <p class="dropcap-paragraph">
+                        <span class="dropcap">S</span>aya adalah mahasiswa S1 Teknik Informatika Universitas Trunodjoyo Madura (UTM), asisten praktikum, dan admin lab ID Eksak yang memadukan rekayasa perangkat lunak dengan kecakapan desain multimedia, visual data, dan komunikasi organisasi.
+                    </p>
+                </div>
+
+                <div class="about-right">
+                    <div class="img-wrapper wide-img">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1000&q=80"
+                            alt="Web Development Desk">
+                    </div>
+                    <div class="roles-list">
+                        <h2>ASISTEN PRAKTIKUM WEB & STRUKTUR DATA</h2>
+                        <h2>ADMIN LABORATORIUM ID EKSAK UTM</h2>
+                        <h2>KETUA UMUM ILSAH MADURA (2025/2026)</h2>
+                        <h2>BERBASIS DI GRESIK, JAWA TIMUR.</h2>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. WEBSITE STAMP & UPCOMING NEXT SECTION -->
+            <section class="website-highlight" id="work">
+                <div class="stamp-banner">
+                    <div class="stamp-box">
+                        <h2>INFORMATIKA</h2>
+                    </div>
+                    <div class="stamp-icon">
+                        <i class="ri-code-s-slash-line"></i>
+                    </div>
+                </div>
+
+                <div class="upcoming-grid">
+                    <div class="upcoming-left">
+                        <div class="upcoming-top-row">
+                            <div class="upcoming-info">
+                                <h3>UPCOMING NEXT</h3>
+                                <p>Rilisan Terkini – Karya &<br>pengembangan sistem<br>akademik terpadu.</p>
+                                <div class="tip-box"><strong>TIP!</strong> Klik gambar untuk detail</div>
+                            </div>
+                            <div class="upcoming-feature-card">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                                        alt="Portal Praktikum">
+                                </div>
+                                <h4>PORTAL ASISTENSI WEB <span class="badge-new">NEW</span></h4>
+                                <p>Platform terintegrasi untuk bimbingan coding, submit tugas modul praktikum, dan evaluasi hasil belajar mahasiswa Teknik Informatika UTM.</p>
+                            </div>
+                        </div>
+                        <div class="img-wrapper large-showcase-img">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
+                                alt="Coding & Data Matrix">
+                        </div>
+                    </div>
+
+                    <div class="upcoming-right">
+                        <h2 class="think-title">THINK, CODE<br><span>DELIVER</span></h2>
+                        <p class="dropcap-paragraph">
+                            <span class="dropcap">S</span>istem yang andal dibangun dari pemahaman mendalam atas algoritma, struktur data yang efisien, dan arsitektur kode yang bersih.
+                        </p>
+                        <p class="body-copy">
+                            Mulai dari perancangan database MySQL, logika backend dengan Python dan PHP, hingga antarmuka modern yang responsif dan nyaman digunakan. Repositori kode dan proyek terbuka dapat dieksplorasi secara lengkap melalui GitHub.
+                        </p>
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="github-hero-cta">
+                                <i class="ri-github-fill"></i> KUNJUNGI GITHUB: @azes24 <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                            <a href="work.html" class="oval-cta">
+                                <span class="cta-text">EXPERIENCE & PROJECTS</span>
+                                <i class="ri-arrow-right-line cta-arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. AWARDS COUNTER BAR -->
+            <section class="awards-bar">
+                <div class="award-item">
+                    <div class="award-text">
+                        <span>LOMBA INFOGRAFIS</span>
+                        <h4>JUARA 2</h4>
+                    </div>
+                    <div class="award-num">2</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-text">
+                        <span>TIM LIDM UTM</span>
+                        <h4>JUARA 3</h4>
+                    </div>
+                    <div class="award-num">3</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-text">
+                        <span>VIDEOGRAFI PRODISTIK ITS</span>
+                        <h4>FINALIS</h4>
+                    </div>
+                    <div class="award-num">1</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-text">
+                        <span>ESAI ILMIAH NASIONAL SORE 2</span>
+                        <h4>BRONZE</h4>
+                    </div>
+                    <div class="award-num">1</div>
+                </div>
+            </section>
+
+            <!-- 6. DRAGGABLE CAROUSEL: EXPERIENCE & PROJECTS -->
+            <section class="draggable-work-section" id="work-slider">
+                <div class="slider-header">
+                    <span>GESER KE SAMPING UNTUK MENJELAJAHI ARSIP</span>
+                    <span><i class="ri-drag-move-2-line"></i> INTERACTIVE SLIDER</span>
+                </div>
+                <div class="carousel-viewport" id="carouselViewport">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Slide 1 -->
+                        <article class="news-card slide-card">
+                            <div class="img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+                                    alt="Sistem Praktikum Web">
+                            </div>
+                            <h3 class="card-title">WEB DEV PRAKTIKUM <span class="badge-new">NEW</span></h3>
+                            <p class="card-desc">Bimbingan modul HTML, CSS, JavaScript, PHP & database MySQL untuk mahasiswa Teknik Informatika UTM.</p>
+                        </article>
+
+                        <!-- Slide 2 -->
+                        <article class="news-card slide-card center-highlight">
+                            <h2 class="all-work-heading">EXPLORE!</h2>
+                            <p class="featured-sub">14 Edisi Terpilih –<br>Asistensi, Prestasi &<br>Karya Digital.</p>
+                            <div style="display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 220px; margin: 0 auto;">
+                                <a href="work.html" class="oval-cta" style="padding: 8px 16px; font-size: 0.75rem;">
+                                    <span class="cta-text">EXP & PROJECTS</span>
+                                    <i class="ri-arrow-right-line cta-arrow"></i>
+                                </a>
+                                <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="github-pill-btn" style="justify-content: center; font-size: 0.75rem; padding: 6px 12px;">
+                                    <i class="ri-github-fill"></i> GITHUB @azes24 <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Slide 3 -->
+                        <article class="news-card slide-card">
+                            <div class="img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+                                    alt="Desain Infografis">
+                            </div>
+                            <h3 class="card-title">INFOGRAFIS JUARA 2 <span class="badge-new">AWARD</span></h3>
+                            <p class="card-desc">Karya pemenang Juara 2 Desain Infografis Universitas Trunodjoyo Madura dengan visualisasi data yang informatif.</p>
+                        </article>
+
+                        <!-- Slide 4 -->
+                        <article class="news-card slide-card">
+                            <div class="img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
+                                    alt="Admin Lab ID Eksak">
+                            </div>
+                            <h3 class="card-title">ADMIN LAB ID EKSAK <span class="badge-new">UTM</span></h3>
+                            <p class="card-desc">Pengelolaan administrasi operasional, pemeliharaan laboratorium, serta inventaris komputasi ID Eksak.</p>
+                        </article>
+
+                        <!-- Slide 5 -->
+                        <article class="news-card slide-card">
+                            <div class="img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80"
+                                    alt="Videografi PRODISTIK ITS">
+                            </div>
+                            <h3 class="card-title">VIDEOGRAFI ITS <span class="badge-new">FINALIS</span></h3>
+                            <p class="card-desc">Karya sinematik video kreatif dan dokumentasi yang menembus babak finalis kompetisi PRODISTIK ITS.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. INFINITE MARQUEE CTA & FOOTER -->
+            <section class="marquee-section">
+                <div class="marquee-track">
+                    <div class="marquee-content">
+                        <span>Mari berkolaborasi & terhubung <a href="https://wa.me/6285731037913" target="_blank"
+                                class="email-badge">HUBUNGI SAYA</a></span>
+                        <span>Mari berkolaborasi & terhubung <a href="https://wa.me/6285731037913" target="_blank"
+                                class="email-badge">HUBUNGI SAYA</a></span>
+                        <span>Mari berkolaborasi & terhubung <a href="https://wa.me/6285731037913" target="_blank"
+                                class="email-badge">HUBUNGI SAYA</a></span>
+                        <span>Mari berkolaborasi & terhubung <a href="https://wa.me/6285731037913" target="_blank"
+                                class="email-badge">HUBUNGI SAYA</a></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. FOOTER DENGAN IKON SOSIAL LENGKAP -->
+            <footer class="footer">
+                <div class="footer-left">
+                    <strong>FATHUL AZIZ SAIFUDDIN©</strong>
+                    <span>Dukun, Gresik, Jawa Timur</span>
+                </div>
+                <div class="footer-right footer-icons">
+                    <a href="https://wa.me/6285731037913" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" title="WhatsApp (0857-3103-7913)" aria-label="WhatsApp">
+                        <i class="ri-whatsapp-line"></i>
+                    </a>
+                    <a href="https://instagram.com/azesfx_" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" title="Instagram (@azesfx_)" aria-label="Instagram">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" title="GitHub (@azes24)" aria-label="GitHub">
+                        <i class="ri-github-fill"></i>
+                    </a>
+                    <button class="footer-icon-btn share-web-btn" title="Bagikan Web Ini" aria-label="Share Web Link">
+                        <i class="ri-share-forward-line"></i>
+                    </button>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- Libraries: Lenis (Smooth Scroll) & GSAP -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

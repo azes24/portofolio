@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience & Projects — Fathul Aziz Saifuddin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SVG Paper Noise Texture Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Fullscreen Navigation Overlay -->
+    <div class="fullscreen-nav" id="fullscreenNav">
+        <div class="nav-top">
+            <span>Gresik, Jawa Timur</span>
+            <button id="closeNavBtn" class="icon-btn" aria-label="Tutup Menu"><i class="ri-close-line"></i></button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-item">Index</a></li>
+            <li><a href="work.html" class="nav-item active-page">Experience & Projects</a></li>
+            <li><a href="about.html" class="nav-item">About</a></li>
+        </ul>
+        <div class="nav-socials">
+            <a href="https://wa.me/6285731037913" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line"></i> whatsapp</a> ·
+            <a href="https://instagram.com/azesfx_" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line"></i> instagram (@azesfx_)</a> ·
+            <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i> github (@azes24)</a> ·
+            <a href="#" class="share-web-btn"><i class="ri-share-forward-line"></i> share link</a>
+        </div>
+    </div>
+
+    <!-- Main Wrapper untuk Paper Unfold & Smooth Scroll -->
+    <div id="main-wrapper">
+        <main id="paper-container">
+
+            <!-- 1. TOP NAVIGATION BAR -->
+            <header class="navbar">
+                <div class="nav-left">Gresik, ID</div>
+                <div class="nav-center">
+                    <a href="index.html" class="paper-logo">Fathul Aziz Saifuddin</a>
+                </div>
+                <div class="nav-right">
+                    <button id="openNavBtn" class="burger-btn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- 2. WORK HERO & ARCHIVE CONTROLS -->
+            <section class="work-hero-section">
+                <div class="work-header-row">
+                    <div class="stamp-box work-stamp">
+                        <h1>EXP & PROJECTS</h1>
+                    </div>
+                    <div class="work-header-meta">
+                        <p class="editorial-sub">Rekam jejak praktikum, rekayasa web,<br>desain multimedia & kepemimpinan (2021 — 2027)</p>
+                        <div style="margin-top: 14px;">
+                            <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="github-pill-btn">
+                                <i class="ri-github-fill"></i> GITHUB REPOSITORY: @azes24 <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                        <div class="view-toggle">
+                            <span>MODE TAMPILAN:</span>
+                            <button class="toggle-btn active" id="viewShelfBtn">BOOKSHELF</button>
+                            <button class="toggle-btn" id="viewGridBtn">GRID</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. INTERACTIVE BOOKSHELF / ACCORDION ARCHIVE (14 EDITIONS) -->
+            <section class="bookshelf-section">
+                <div class="bookshelf-instruction">
+                    <span><i class="ri-cursor-line"></i> <strong>PETUNJUK:</strong> Klik pada baris buku di bawah untuk membuka lipatan detail</span>
+                    <span>14 EDISI TERPILIH</span>
+                </div>
+
+                <div class="bookshelf-container" id="bookshelfContainer">
+
+                    <!-- Edition 01: Praktikum Web Dev -->
+                    <article class="book-spine active">
+                        <div class="spine-header">
+                            <span class="spine-year">2026</span>
+                            <h2 class="spine-title">WEB PRAKTIKUM UTM <span class="badge-new">NEW</span></h2>
+                            <span class="spine-category">Web Dev / Asistensi</span>
+                            <i class="ri-add-line spine-icon"></i>
+                        </div>
+                        <div class="spine-content">
+                            <div class="spine-inner-grid">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80"
+                                        alt="Praktikum Web UTM">
+                                </div>
+                                <div class="spine-details">
+                                    <h3>ASISTEN PENGEMBANGAN APLIKASI WEB</h3>
+                                    <p>Membimbing mahasiswa S1 Teknik Informatika UTM dalam praktikum Pengembangan Aplikasi Web, menyiapkan modul latihan, menguji kode frontend & backend, serta menilai tugas praktikum.</p>
+                                    <div class="spine-tags">
+                                        <span>HTML / CSS / JS</span> · <span>PHP & MySQL</span> · <span>Teaching & Code Review</span>
+                                    </div>
+                                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; align-items: center;">
+                                        <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="github-pill-btn" style="padding: 7px 14px; font-size: 0.75rem;">
+                                            <i class="ri-github-fill"></i> GITHUB @azes24 <i class="ri-arrow-right-up-line"></i>
+                                        </a>
+                                        <a href="about.html" class="inline-cta">LIHAT AMANAH <i
+                                                class="ri-arrow-right-up-line"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Edition 02: Desain Infografis Juara 2 -->
+                    <article class="book-spine">
+                        <div class="spine-header">
+                            <span class="spine-year">2026</span>
+                            <h2 class="spine-title">DESAIN INFOGRAFIS <span class="badge-new">JUARA 2</span></h2>
+                            <span class="spine-category">Prestasi / Visual Design</span>
+                            <i class="ri-add-line spine-icon"></i>
+                        </div>
+                        <div class="spine-content">
+                            <div class="spine-inner-grid">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80"
+                                        alt="Desain Infografis Juara 2">
+                                </div>
+                                <div class="spine-details">
+                                    <h3>JUARA 2 LOMBA DESAIN INFOGRAFIS UTM</h3>
+                                    <p>Meraih Juara 2 dalam kompetisi desain infografis tingkat Universitas Trunodjoyo Madura, menyajikan informasi kompleks melalui visual data yang komunikatif dan proporsional.</p>
+                                    <div class="spine-tags">
+                                        <span>Affinity / Canva</span> · <span>Data Visualization</span> · <span>Typography</span>
+                                    </div>
+                                    <a href="about.html" class="inline-cta">LIHAT PRESTASI LENGKAP <i
+                                            class="ri-arrow-right-up-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Edition 03: Seleksi Tim LIDM UTM -->
+                    <article class="book-spine">
+                        <div class="spine-header">
+                            <span class="spine-year">2026</span>
+                            <h2 class="spine-title">TIM SELEKSI LIDM <span class="badge-new">JUARA 3</span></h2>
+                            <span class="spine-category">Inovasi Digital / Kompetisi</span>
+                            <i class="ri-add-line spine-icon"></i>
+                        </div>
+                        <div class="spine-content">
+                            <div class="spine-inner-grid">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=900&q=80"
+                                        alt="Tim LIDM UTM">
+                                </div>
+                                <div class="spine-details">
+                                    <h3>JUARA 3 TIM SELEKSI INTERNAL LIDM UTM</h3>
+                                    <p>Menjadi bagian dari tim peraih Juara 3 pada seleksi internal Lomba Inovasi Digital Mahasiswa (LIDM) Universitas Trunodjoyo Madura untuk kategori inovasi teknologi pendidikan dan karya digital.</p>
+                                    <div class="spine-tags">
+                                        <span>Digital Innovation</span> · <span>UI/UX Prototyping</span> · <span>Collaboration</span>
+                                    </div>
+                                    <a href="about.html" class="inline-cta">PELAJARI KARYA <i
+                                            class="ri-arrow-right-up-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Edition 04: Asisten Struktur Data -->
+                    <article class="book-spine">
+                        <div class="spine-header">
+                            <span class="spine-year">2026</span>
+                            <h2 class="spine-title">PRAKTIKUM STRUKTUR DATA</h2>
+                            <span class="spine-category">Algoritma / Asistensi Lab</span>
+                            <i class="ri-add-line spine-icon"></i>
+                        </div>
+                        <div class="spine-content">
+                            <div class="spine-inner-grid">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1516116211227-bbc157b85e05?auto=format&fit=crop&w=900&q=80"
+                                        alt="Struktur Data">
+                                </div>
+                                <div class="spine-details">
+                                    <h3>ASISTEN PRAKTIKUM STRUKTUR DATA UTM</h3>
+                                    <p>Membimbing mahasiswa dalam memahami konsep Linked List, Stack, Queue, Tree, Graph, serta optimasi efisiensi algoritma dan kompleksitas waktu (Big-O).</p>
+                                    <div class="spine-tags">
+                                        <span>C++ / Python</span> · <span>Data Structures</span> · <span>Algorithm Analysis</span>
+                                    </div>
+                                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; align-items: center;">
+                                        <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="github-pill-btn" style="padding: 7px 14px; font-size: 0.75rem;">
+                                            <i class="ri-github-fill"></i> REPO ALGORITMA <i class="ri-arrow-right-up-line"></i>
+                                        </a>
+                                        <a href="about.html" class="inline-cta">EXPLORE AMANAH <i
+                                                class="ri-arrow-right-up-line"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Edition 05: Admin Lab ID Eksak -->
+                    <article class="book-spine">
+                        <div class="spine-header">
+                            <span class="spine-year">2026</span>
+                            <h2 class="spine-title">ADMIN LAB ID EKSAK</h2>
+                            <span class="spine-category">Manajemen Lab / UTM</span>
+                            <i class="ri-add-line spine-icon"></i>
+                        </div>
+                        <div class="spine-content">
+                            <div class="spine-inner-grid">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80"
+                                        alt="Lab ID Eksak">
+                                </div>
+                                <div class="spine-details">
+                                    <h3>PENGELOLA ADMINISTRASI LAB ID EKSAK</h3>
+                                    <p>Mengelola administrasi laboratorium, pencatatan inventaris perangkat keras, koordinasi jadwal operasional praktikum, serta pemeliharaan sistem komputer di laboratorium ID Eksak UTM.</p>
+                                    <div class="spine-tags">
+                                        <span>Administrasi Komputasi</span> · <span>Lab Operations</span> · <span>Inventaris</span>
+                                    </div>
+                                    <a href="about.html" class="inline-cta">LIHAT DETAIL LAB <i
+                                            class="ri-arrow-right-up-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Edition 06: Finalis Videografi PRODISTIK ITS -->
+                    <article class="book-spine">
+                        <div class="spine-header">
+                            <span class="spine-year">2023</span>
+                            <h2 class="spine-title">VIDEOGRAFI PRODISTIK ITS <span class="badge-new">FINALIS</span></h2>
+                            <span class="spine-category">Multimedia / Video Kreatif</span>
+                            <i class="ri-add-line spine-icon"></i>
+                        </div>
+                        <div class="spine-content">
+                            <div class="spine-inner-grid">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80"
+                                        alt="Videografi PRODISTIK ITS">
+                                </div>
+                                <div class="spine-details">
+                                    <h3>FINALIS LOMBA VIDEOGRAFI TINGKAT JAWA TIMUR</h3>
+                                    <p>Memproduksi video dokumenter sinematik berdurasi kreatif pada ajang kompetisi PRODISTIK ITS, mengombinasikan teknik pengambilan gambar, sound scoring, dan editing dinamis.</p>
+                                    <div class="spine-tags">
+                                        <span>Adobe Premiere</span> · <span>After Effects</span> · <span>Cinematography</span>
+                                    </div>
+                                    <a href="about.html" class="inline-cta">EXPLORE MULTIMEDIA <i
+                                            class="ri-arrow-right-up-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Edition 07: Asisten Algoritma & Pemrograman -->
+                    <article class="book-spine">
+                        <div class="spine-header">
+                            <span class="spine-year">2025</span>
+                            <h2 class="spine-title">ALGORITMA & PEMROGRAMAN</h2>
+                            <span class="spine-category">Coding Fundamentals / UTM</span>
+                            <i class="ri-add-line spine-icon"></i>
+                        </div>
+                        <div class="spine-content">
+                            <div class="spine-inner-grid">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80"
+                                        alt="Algoritma & Pemrograman">
+                                </div>
+                                <div class="spine-details">
+                                    <h3>ASISTEN PRAKTIKUM ALPRO UTM</h3>
+                                    <p>Membantu mahasiswa tingkat awal dalam memahami dasar-dasar logika pemrograman, variabel, percabangan, perulangan, fungsi, array, dan paradigma computational thinking.</p>
+                                    <div class="spine-tags">
+                                        <span>Python Programming</span> · <span>Logic & Flow</span> · <span>Problem Solving</span>
+                                    </div>
+                                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; align-items: center;">
+                                        <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="github-pill-btn" style="padding: 7px 14px; font-size: 0.75rem;">
+                                            <i class="ri-github-fill"></i> SCRIPT PYTHON <i class="ri-arrow-right-up-line"></i>
+                                        </a>
+                                        <a href="about.html" class="inline-cta">LIHAT RIWAYAT <i
+                                                class="ri-arrow-right-up-line"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Edition 08: Ketua Umum ILSAH Madura -->
+                    <article class="book-spine">
+                        <div class="spine-header">
+                            <span class="spine-year">2025</span>
+                            <h2 class="spine-title">KETUA UMUM ILSAH MADURA</h2>
+                            <span class="spine-category">Kepemimpinan / Organisasi</span>
+                            <i class="ri-add-line spine-icon"></i>
+                        </div>
+                        <div class="spine-content">
+                            <div class="spine-inner-grid">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80"
+                                        alt="Kepemimpinan ILSAH Madura">
+                                </div>
+                                <div class="spine-details">
+                                    <h3>KEPEMIMPINAN ORGANISASI MAHASISWA</h3>
+                                    <p>Memimpin arah gerak organisasi mahasiswa santri, mengoordinasikan seluruh pengurus lintas departemen, bertanggung jawab atas pelaksanaan pelantikan akbar dan Musyawarah Besar (MUBES).</p>
+                                    <div class="spine-tags">
+                                        <span>Leadership</span> · <span>Team Management</span> · <span>Public Speaking</span>
+                                    </div>
+                                    <a href="about.html" class="inline-cta">BACA PROFIL ORGANISASI <i
+                                            class="ri-arrow-right-up-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Edition 09: Bronze Medal Essay SORE 2 -->
+                    <article class="book-spine">
+                        <div class="spine-header">
+                            <span class="spine-year">2023</span>
+                            <h2 class="spine-title">BRONZE MEDAL ESSAY <span class="badge-new">NASIONAL</span></h2>
+                            <span class="spine-category">Karya Tulis Ilmiah / Prestasi</span>
+                            <i class="ri-add-line spine-icon"></i>
+                        </div>
+                        <div class="spine-content">
+                            <div class="spine-inner-grid">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80"
+                                        alt="Esai Ilmiah SORE 2">
+                                </div>
+                                <div class="spine-details">
+                                    <h3>SORE 2 NATIONAL COMPETITION</h3>
+                                    <p>Meraih Bronze Medal pada kompetisi esai ilmiah nasional, mengkaji isu strategis teknologi dan sosial dengan kerangka riset ilmiah yang terstruktur serta solusi yang inovatif.</p>
+                                    <div class="spine-tags">
+                                        <span>Academic Writing</span> · <span>Critical Thinking</span> · <span>Research</span>
+                                    </div>
+                                    <a href="about.html" class="inline-cta">LIHAT PENGHARGAAN <i
+                                            class="ri-arrow-right-up-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Edition 10: Humas & Infokom UKM Triple-C -->
+                    <article class="book-spine">
+                        <div class="spine-header">
+                            <span class="spine-year">2026</span>
+                            <h2 class="spine-title">HUMAS & INFOKOM TRIPLE-C</h2>
+                            <span class="spine-category">Media & Publikasi / UKM</span>
+                            <i class="ri-add-line spine-icon"></i>
+                        </div>
+                        <div class="spine-content">
+                            <div class="spine-inner-grid">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=900&q=80"
+                                        alt="UKM Triple-C">
+                                </div>
+                                <div class="spine-details">
+                                    <h3>DIVISI HUMAS DAN INFOKOM</h3>
+                                    <p>Mengelola hubungan masyarakat, publikasi media sosial, penyusunan siaran pers, serta konten visual untuk UKM komputasi dan teknologi informasi Triple-C Universitas Trunodjoyo Madura.</p>
+                                    <div class="spine-tags">
+                                        <span>Public Relations</span> · <span>Content Strategy</span> · <span>Branding</span>
+                                    </div>
+                                    <a href="about.html" class="inline-cta">DETAIL DIVISI <i
+                                            class="ri-arrow-right-up-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Edition 11: Kominfo Gerakan Mahasiswa Lowayu -->
+                    <article class="book-spine">
+                        <div class="spine-header">
+                            <span class="spine-year">2026</span>
+                            <h2 class="spine-title">KOMINFO GEMA LOWAYU</h2>
+                            <span class="spine-category">Komunikasi / Informasi</span>
+                            <i class="ri-add-line spine-icon"></i>
+                        </div>
+                        <div class="spine-content">
+                            <div class="spine-inner-grid">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80"
+                                        alt="GEMA Lowayu">
+                                </div>
+                                <div class="spine-details">
+                                    <h3>KOMUNIKASI, INFORMASI & PUBLIKASI</h3>
+                                    <p>Mengoordinasikan saluran komunikasi publik, penyampaian informasi kegiatan mahasiswa, dokumentasi event, dan penerbitan materi edukasi bagi Gerakan Mahasiswa Lowayu.</p>
+                                    <div class="spine-tags">
+                                        <span>Social Media</span> · <span>Campaign</span> · <span>Documentation</span>
+                                    </div>
+                                    <a href="about.html" class="inline-cta">PELAJARI PROGRAM <i
+                                            class="ri-arrow-right-up-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Edition 12: Creative Summit Triple-C x GDGoC UTM -->
+                    <article class="book-spine">
+                        <div class="spine-header">
+                            <span class="spine-year">2026</span>
+                            <h2 class="spine-title">CREATIVE SUMMIT GDGOC</h2>
+                            <span class="spine-category">Event IT / Sie PDD</span>
+                            <i class="ri-add-line spine-icon"></i>
+                        </div>
+                        <div class="spine-content">
+                            <div class="spine-inner-grid">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80"
+                                        alt="Creative Summit">
+                                </div>
+                                <div class="spine-details">
+                                    <h3>TRIPLE-C × GOOGLE DEVELOPER GROUPS ON CAMPUS</h3>
+                                    <p>Berperan sebagai Sie Publikasi, Dekorasi & Dokumentasi (PDD) dalam kolaborasi akbar Creative Summit bersama GDGoC UTM untuk menghadirkan seminar dan workshop teknologi.</p>
+                                    <div class="spine-tags">
+                                        <span>Event Media</span> · <span>Live Documentation</span> · <span>Visual Identity</span>
+                                    </div>
+                                    <a href="about.html" class="inline-cta">ARSIP KEPANITIAAN <i
+                                            class="ri-arrow-right-up-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Edition 13: Tutor Baca Kitab Al-Miftah -->
+                    <article class="book-spine">
+                        <div class="spine-header">
+                            <span class="spine-year">2022</span>
+                            <h2 class="spine-title">TUTOR BACA KITAB AL-MIFTAH</h2>
+                            <span class="spine-category">Pengajaran / Pesantren</span>
+                            <i class="ri-add-line spine-icon"></i>
+                        </div>
+                        <div class="spine-content">
+                            <div class="spine-inner-grid">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"
+                                        alt="Tutor Baca Kitab">
+                                </div>
+                                <div class="spine-details">
+                                    <h3>PENGAJARAN & PEMBINAAN SANTRI</h3>
+                                    <p>Mengajar metode praktis membaca kitab kuning Al-Miftah lil Ulum di Pondok Pesantren Tarbiyatut Tholabah, membina puluhan santri menguasai kaidah nahwu, sharaf, dan pemahaman teks klasik.</p>
+                                    <div class="spine-tags">
+                                        <span>Pedagogi</span> · <span>Metode Al-Miftah</span> · <span>Mentorship</span>
+                                    </div>
+                                    <a href="about.html" class="inline-cta">BACA CERITA <i
+                                            class="ri-arrow-right-up-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Edition 14: Majalah Pers Siswa An-Nashihah -->
+                    <article class="book-spine">
+                        <div class="spine-header">
+                            <span class="spine-year">2022</span>
+                            <h2 class="spine-title">PERS MAJALAH AN-NASHIHAH</h2>
+                            <span class="spine-category">Jurnalistik / Editorial</span>
+                            <i class="ri-add-line spine-icon"></i>
+                        </div>
+                        <div class="spine-content">
+                            <div class="spine-inner-grid">
+                                <div class="img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=900&q=80"
+                                        alt="Majalah An-Nashihah">
+                                </div>
+                                <div class="spine-details">
+                                    <h3>SEKRETARIS & REDAKSI PENERBITAN</h3>
+                                    <p>Mengelola administrasi kearsipan, korespondensi lembaga pers siswa, serta berkontribusi langsung dalam penyusunan artikel, tata letak (layouting), dan penerbitan edisi majalah cetak An-Nashihah.</p>
+                                    <div class="spine-tags">
+                                        <span>Editorial Layout</span> · <span>Arsip & Pers</span> · <span>Publishing</span>
+                                    </div>
+                                    <a href="about.html" class="inline-cta">EXPLORE ARSIP <i
+                                            class="ri-arrow-right-up-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- 4. FEATURED RELEASE ("PORTAL ASISTENSI WEB") & TALK! BANNER -->
+            <section class="work-bottom-feature">
+                <div class="work-feature-left">
+                    <div class="upcoming-feature-card">
+                        <span class="hurrah-tag">RILISAN TERBARU</span>
+                        <h3 class="work-feature-title">PORTAL PRAKTIKUM WEB <span class="badge-new">NEW</span></h3>
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80"
+                                alt="Portal Praktikum Web">
+                        </div>
+                        <p class="editorial-sub">Platform asistensi interaktif yang memudahkan mahasiswa Teknik Informatika UTM dalam mengakses modul praktikum, mengumpulkan kode sumber, dan menerima review umpan balik secara transparan.</p>
+                        <div style="margin-top: 14px;">
+                            <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="github-pill-btn" style="padding: 9px 18px; font-size: 0.8rem;">
+                                <i class="ri-github-fill"></i> BUKA REPOSITORI DI GITHUB @azes24 <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-feature-right">
+                    <div class="talk-card">
+                        <div class="stamp-box">
+                            <h2>KONTAK!</h2>
+                        </div>
+                        <p class="talk-lead">Sedang mencari rekan tim<br><u>pengembang web & multimedia</u>?<br>Mari ciptakan sesuatu yang luar biasa.</p>
+                        <a href="https://wa.me/6285731037913" target="_blank" rel="noopener noreferrer" class="oval-cta">
+                            <span class="cta-text">CHAT WHATSAPP</span>
+                            <i class="ri-whatsapp-line cta-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. INFINITE MARQUEE CTA & FOOTER -->
+            <section class="marquee-section">
+                <div class="marquee-track">
+                    <div class="marquee-content">
+                        <span>Mari berkolaborasi & terhubung <a href="https://wa.me/6285731037913" target="_blank"
+                                class="email-badge">HUBUNGI SAYA</a></span>
+                        <span>Mari berkolaborasi & terhubung <a href="https://wa.me/6285731037913" target="_blank"
+                                class="email-badge">HUBUNGI SAYA</a></span>
+                        <span>Mari berkolaborasi & terhubung <a href="https://wa.me/6285731037913" target="_blank"
+                                class="email-badge">HUBUNGI SAYA</a></span>
+                        <span>Mari berkolaborasi & terhubung <a href="https://wa.me/6285731037913" target="_blank"
+                                class="email-badge">HUBUNGI SAYA</a></span>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div class="footer-left">
+                    <strong>FATHUL AZIZ SAIFUDDIN©</strong>
+                    <span>Dukun, Gresik, Jawa Timur</span>
+                </div>
+                <div class="footer-right footer-icons">
+                    <a href="https://wa.me/6285731037913" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" title="WhatsApp (0857-3103-7913)" aria-label="WhatsApp">
+                        <i class="ri-whatsapp-line"></i>
+                    </a>
+                    <a href="https://instagram.com/azesfx_" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" title="Instagram (@azesfx_)" aria-label="Instagram">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" title="GitHub (@azes24)" aria-label="GitHub">
+                        <i class="ri-github-fill"></i>
+                    </a>
+                    <button class="footer-icon-btn share-web-btn" title="Bagikan Web Ini" aria-label="Share Web Link">
+                        <i class="ri-share-forward-line"></i>
+                    </button>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- Libraries: Lenis & GSAP -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
