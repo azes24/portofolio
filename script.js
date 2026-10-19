@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(raf);
 
     // 2. ANIMASI PEMBUKA "PAPER UNFOLD" (HANYA SAAT PERTAMA KALI MASUK WEBSITE)
-    // Menggunakan sessionStorage agar saat berpindah halaman (Index, Work, About), animasi pembuka tidak berulang
+    // Menggunakan sessionStorage agar saat berpindah halaman (Home, Profile, About), animasi pembuka tidak berulang
     const paperContainer = document.getElementById("paper-container");
     const hasEnteredSite = sessionStorage.getItem("portfolio_entered");
 
@@ -107,13 +107,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let velocity = 0;
 
     if (viewport && track) {
-        viewport.addEventListener("mousedown", (e) => {
-            isDown = true;
-            startX = e.pageX;
-            lastMouseX = e.pageX;
-        });
+        const getPositionX = (e) => e.type.includes('touch') ? e.touches[0].clientX : e.pageX;
 
-        window.addEventListener("mouseup", () => {
+        const handleDragStart = (e) => {
+            isDown = true;
+            startX = getPositionX(e);
+            lastMouseX = startX;
+        };
+
+        const handleDragEnd = () => {
             if (!isDown) return;
             isDown = false;
             prevTranslate = currentTranslate;
@@ -126,13 +128,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     ease: "power2.out"
                 });
             }
-        });
+        };
 
-        window.addEventListener("mousemove", (e) => {
+        const handleDragMove = (e) => {
             if (!isDown) return;
-            e.preventDefault();
 
-            const currentX = e.pageX;
+            const currentX = getPositionX(e);
             const deltaX = currentX - startX;
             velocity = currentX - lastMouseX;
             lastMouseX = currentX;
@@ -143,20 +144,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
             gsap.to(track, {
                 x: currentTranslate,
-                duration: 0.3,
+                duration: 0.25,
                 ease: "power2.out"
             });
 
             // Efek miring (skew) proporsional terhadap kecepatan drag kursor
             if (cards.length > 0) {
-                const skewAmount = Math.max(Math.min(velocity * 0.25, 8), -8);
+                const skewAmount = Math.max(Math.min(velocity * 0.2, 7), -7);
                 gsap.to(cards, {
                     skewX: skewAmount,
                     duration: 0.2,
                     ease: "power1.out"
                 });
             }
+        };
+
+        // Mouse events
+        viewport.addEventListener("mousedown", handleDragStart);
+        window.addEventListener("mouseup", handleDragEnd);
+        window.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            handleDragMove(e);
         });
+
+        // Touch events untuk Mobile HP
+        viewport.addEventListener("touchstart", handleDragStart, { passive: true });
+        window.addEventListener("touchend", handleDragEnd);
+        window.addEventListener("touchmove", (e) => {
+            if (!isDown) return;
+            handleDragMove(e);
+        }, { passive: true });
     }
 
     // 5. INTERACTIVE BOOKSHELF ACCORDION & VIEW MODE TOGGLE (Halaman work.html)

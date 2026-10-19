@@ -523,7 +523,7 @@ a {
 
 .oval-cta .cta-text {
     font-family: var(--font-display);
-    font-size: 3rem;
+    font-size: 2rem;
     transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
@@ -554,18 +554,22 @@ a {
    ========================================================================== */
 .awards-bar {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     border-bottom: var(--border-line);
-    padding: 28px 36px;
+    padding: 22px 36px;
+    align-items: center;
+    background-color: var(--bg-paper);
 }
 
 .award-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 16px;
+    justify-content: space-between;
+    gap: 12px;
     border-right: var(--border-line);
-    padding: 10px 18px;
+    padding: 8px 18px;
+    min-width: 0;
+    height: 100%;
 }
 
 .award-item:last-child {
@@ -573,25 +577,44 @@ a {
 }
 
 .award-text {
-    text-align: center;
+    text-align: left;
+    min-width: 0;
+    flex: 1;
 }
 
 .award-text span {
     font-family: var(--font-editorial);
-    font-size: 1.1rem;
+    font-size: 0.82rem;
     display: block;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.25;
+    margin-bottom: 3px;
+    word-break: break-word;
 }
 
 .award-text h4 {
     font-family: var(--font-display);
-    font-size: 2.6rem;
-    line-height: 0.95;
+    font-size: clamp(1.25rem, 1.55vw, 1.7rem);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin: 0;
+    word-break: break-word;
 }
 
 .award-num {
     font-family: var(--font-display);
-    font-size: 6.5rem;
-    line-height: 0.8;
+    font-size: clamp(2.4rem, 3.2vw, 3.6rem);
+    line-height: 0.85;
+    flex-shrink: 0;
+    color: var(--ink-dark);
+}
+
+.award-num.award-text-num {
+    font-size: clamp(1.4rem, 1.8vw, 2rem);
+    letter-spacing: 0.04em;
+    padding-left: 2px;
 }
 
 /* ==========================================================================
@@ -1419,7 +1442,7 @@ a {
 }
 
 .book-spine.active .spine-content {
-    max-height: 550px;
+    max-height: 2500px;
 }
 
 .spine-inner-grid {
@@ -1749,22 +1772,493 @@ a {
     opacity: 1;
 }
 
+/* ==========================================================================
+   FEATURED SOFTWARE & WEB PROJECTS SECTION
+   ========================================================================== */
+.featured-projects-section {
+    padding: 40px 36px 60px;
+    border-bottom: var(--border-line);
+}
+
+.projects-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+    border-bottom: 2px solid var(--ink-dark);
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.project-stamp h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 6vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+}
+
+.projects-header-row .editorial-sub {
+    max-width: 480px;
+    font-size: 1.25rem;
+    color: var(--ink-muted);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.project-card {
+    border: 1.5px solid var(--ink-dark);
+    background-color: var(--bg-paper);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 6px 6px 0px rgba(28, 28, 25, 0.2);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 10px 10px 0px rgba(28, 28, 25, 0.3);
+}
+
+.project-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    border-bottom: 1.5px solid var(--ink-dark);
+    background-color: #1a1a1a;
+}
+
+.project-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: sepia(15%) contrast(105%) grayscale(20%);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.project-card:hover .project-img-wrapper img {
+    transform: scale(1.05);
+    filter: sepia(0%) contrast(100%) grayscale(0%);
+}
+
+.project-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background-color: var(--ink-dark);
+    color: var(--bg-paper);
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid var(--bg-paper);
+}
+
+.project-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.project-meta {
+    font-family: var(--font-editorial);
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent-orange);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.project-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+}
+
+.project-desc {
+    font-family: var(--font-editorial);
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: var(--ink-muted);
+    margin-bottom: 22px;
+}
+
+.project-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-top: 16px;
+    border-top: var(--border-line);
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.source-btn {
+    background-color: var(--ink-dark);
+    color: var(--bg-paper) !important;
+    border: 1.5px solid var(--ink-dark);
+}
+
+.source-btn:hover {
+    background-color: var(--accent-orange);
+    border-color: var(--accent-orange);
+    color: #fff !important;
+}
+
+.demo-btn {
+    background-color: var(--accent-orange);
+    color: #fff !important;
+    border: 1.5px solid var(--accent-orange);
+}
+
+.demo-btn:hover {
+    background-color: var(--ink-dark);
+    border-color: var(--ink-dark);
+    color: var(--bg-paper) !important;
+}
+
+.project-local-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-editorial);
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--ink-muted);
+    padding: 8px 12px;
+    background: rgba(28, 28, 25, 0.06);
+    border: 1px dashed var(--ink-muted);
+}
+
+/* ==========================================================================
+   COMPREHENSIVE RESPONSIVE DESIGN (<= 768px & <= 480px)
+   ========================================================================== */
 @media (max-width: 768px) {
-    .footer {
+
+    html,
+    body,
+    #main-wrapper,
+    #paper-container {
+        overflow-x: clip;
+        max-width: 100vw;
+    }
+
+    /* Navbar on Mobile */
+    .navbar {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 16px 18px !important;
+    }
+
+    .nav-left {
+        display: none !important;
+    }
+
+    .paper-logo {
+        font-size: 1.15rem !important;
+    }
+
+    /* Global Section Padding on Mobile */
+    .top-showcase,
+    .about-section,
+    .website-highlight,
+    .awards-bar,
+    .draggable-work-section,
+    .about-page-hero,
+    .selected-awards-section,
+    .publications-section,
+    .work-hero-section,
+    .bookshelf-section,
+    .featured-projects-section,
+    .work-bottom-feature {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+
+    /* Giant Titles: Never overflow screen */
+    .giant-miranda {
+        font-size: clamp(2rem, 11vw, 4.2rem) !important;
+        white-space: normal !important;
+        line-height: 0.95 !important;
+        word-break: break-word;
+    }
+
+    .hero-banner {
+        padding: 14px 10px 8px !important;
+        margin-top: 16px;
+    }
+
+    .all-work-heading {
+        font-size: 2.8rem !important;
+    }
+
+    .work-stamp h1 {
+        font-size: clamp(2.2rem, 11vw, 4rem) !important;
+        white-space: normal !important;
+        line-height: 0.95 !important;
+    }
+
+    .awards-title-split .stamp-box h2,
+    .outline-big-title,
+    .talk-card .stamp-box h2 {
+        font-size: clamp(1.8rem, 8.5vw, 3.2rem) !important;
+        white-space: normal !important;
+        line-height: 1 !important;
+    }
+
+    .interactive-title {
+        font-size: 2.4rem !important;
+    }
+
+    .interactive-title span {
+        font-size: 3rem !important;
+    }
+
+    .roles-list h2 {
+        font-size: 1.25rem !important;
+        line-height: 1.3 !important;
+    }
+
+    /* Realistic mobile image heights */
+    .tall-img img,
+    .wide-img img,
+    .portrait-editorial img,
+    .work-feature-left .img-wrapper img {
+        height: 240px !important;
+    }
+
+    .img-wrapper img {
+        height: 190px !important;
+    }
+
+    /* Featured Projects Grid on Mobile */
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    .project-img-wrapper {
+        height: 200px !important;
+    }
+
+    .project-title {
+        font-size: 1.6rem !important;
+    }
+
+    .project-desc {
+        font-size: 1.1rem !important;
+    }
+
+    .project-actions {
         flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        text-align: center;
-        padding: 24px 20px;
+        align-items: stretch;
+    }
+
+    .project-btn {
+        justify-content: center;
+    }
+
+    /* Awards Bar on Mobile */
+    .awards-bar {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px 16px !important;
+        padding-top: 18px !important;
+        padding-bottom: 18px !important;
+    }
+
+    .award-item {
+        border-right: none !important;
+        border-bottom: var(--border-line);
+        padding-bottom: 12px;
+    }
+
+    .award-item:last-child {
+        grid-column: 1 / -1 !important;
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Bookshelf Accordion / Spine on Mobile */
+    .spine-header {
+        grid-template-columns: 46px 1fr 28px !important;
+        padding: 14px 10px !important;
+        gap: 8px !important;
+    }
+
+    .spine-header:hover {
+        padding-left: 10px !important;
+    }
+
+    .spine-year {
+        font-size: 0.95rem !important;
+    }
+
+    .spine-title {
+        font-size: 1.15rem !important;
+        gap: 6px !important;
+    }
+
+    .spine-icon {
+        font-size: 1.4rem !important;
+    }
+
+    .book-spine.active .spine-content {
+        max-height: 2500px !important;
+    }
+
+    .spine-inner-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        padding: 16px 12px !important;
+    }
+
+    .spine-inner-grid .img-wrapper img {
+        height: 190px !important;
+    }
+
+    .spine-details h3 {
+        font-size: 1.4rem !important;
+    }
+
+    .spine-details p {
+        font-size: 1.05rem !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Carousel Cards on Mobile */
+    .slide-card {
+        width: min(300px, 80vw) !important;
+        padding: 0 14px !important;
+    }
+
+    /* Publications / Amanah Grid */
+    .pub-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+
+    /* Awards Ledger (about.html) on Mobile */
+    .ledger-row {
+        grid-template-columns: 50px 1fr 24px !important;
+        padding: 12px 6px !important;
+        gap: 6px !important;
+    }
+
+    .ledger-row:hover {
+        padding-left: 6px !important;
+    }
+
+    .ledger-year {
+        font-size: 1rem !important;
+    }
+
+    .ledger-org {
+        font-size: 1.1rem !important;
+    }
+
+    .ledger-achievement {
+        font-size: 0.95rem !important;
+        grid-column: 2 / -1 !important;
+    }
+
+    /* Marquee on Mobile */
+    .marquee-content span {
+        font-size: 1.6rem !important;
+        margin-right: 20px !important;
+        gap: 10px !important;
+    }
+
+    .email-badge {
+        font-size: 1.25rem !important;
+        padding: 4px 10px !important;
+    }
+
+    /* Fullscreen Nav Overlay */
+    .fullscreen-nav {
+        padding: 20px 24px !important;
+    }
+
+    .nav-links {
+        gap: 20px !important;
+    }
+
+    .nav-item {
+        font-size: clamp(2rem, 10vw, 3.5rem) !important;
+    }
+
+    .nav-socials {
+        font-size: 0.9rem !important;
+        flex-wrap: wrap !important;
+    }
+
+    /* Footer on Mobile */
+    .footer {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 16px !important;
+        text-align: center !important;
+        padding: 24px 20px !important;
     }
 
     .footer-left {
-        flex-direction: column;
-        gap: 4px;
-        align-items: center;
+        flex-direction: column !important;
+        gap: 4px !important;
+        align-items: center !important;
     }
 
     .footer-icons {
-        justify-content: center;
+        justify-content: center !important;
     }
-}
+}
+
+@media (max-width: 480px) {
+    .awards-bar {
+        grid-template-columns: 1fr !important;
+    }
+
+    .paper-logo {
+        font-size: 1.05rem !important;
+    }
+
+    .dropcap-paragraph {
+        font-size: 1.2rem !important;
+    }
+
+    .editorial-lead {
+        font-size: 1.65rem !important;
+    }
+
+    .body-copy {
+        font-size: 1.1rem !important;
+    }
+
+    .download-cv-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        font-size: 1.1rem !important;
+    }
+}
