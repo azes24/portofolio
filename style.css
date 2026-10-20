@@ -142,23 +142,45 @@ a {
     transform: translateX(4px);
 }
 
-/* Fullscreen Navigation Overlay */
+/* Fullscreen Navigation Overlay with Paint Drip */
 .fullscreen-nav {
     position: fixed;
     inset: 0;
-    background-color: var(--ink-dark);
+    background-color: transparent;
     color: var(--bg-paper);
     z-index: 1000;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 28px 40px;
-    transform: translateY(-100%);
-    transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: visibility 0s 0.6s, opacity 0.25s ease;
 }
 
 .fullscreen-nav.active {
-    transform: translateY(0%);
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+    transition: visibility 0s 0s, opacity 0.2s ease;
+}
+
+/* Canvas for Paint Drip Animation */
+.paint-drip-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.nav-top,
+.nav-links,
+.nav-socials {
+    position: relative;
+    z-index: 2;
 }
 
 .nav-top {
@@ -166,6 +188,8 @@ a {
     justify-content: space-between;
     align-items: center;
     font-family: var(--font-editorial);
+    opacity: 0;
+    transform: translateY(-20px);
 }
 
 .icon-btn {
@@ -174,6 +198,12 @@ a {
     color: var(--bg-paper);
     font-size: 2.2rem;
     cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-btn:hover {
+    color: var(--accent-orange);
+    transform: rotate(90deg);
 }
 
 .nav-links {
@@ -183,6 +213,7 @@ a {
 
 .nav-links li {
     overflow: hidden;
+    padding: 4px 0;
 }
 
 .nav-item {
@@ -192,11 +223,16 @@ a {
     line-height: 0.95;
     display: inline-block;
     transition: color 0.3s ease, transform 0.3s ease;
+    will-change: transform, opacity;
 }
 
 .nav-item:hover {
     color: var(--accent-orange);
     transform: skewX(-8deg);
+}
+
+.nav-item.active-page {
+    color: var(--accent-orange);
 }
 
 .nav-socials {
@@ -205,6 +241,8 @@ a {
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 /* ==========================================================================
@@ -462,6 +500,33 @@ a {
     font-family: var(--font-editorial);
     font-size: 0.95rem;
     color: var(--ink-muted);
+}
+
+.profile-github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 6px 14px;
+    background-color: var(--ink-dark);
+    color: var(--bg-paper) !important;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    border: 1.5px solid var(--ink-dark);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 2px 2px 0 rgba(28, 28, 25, 0.2);
+    width: fit-content;
+}
+
+.profile-github-btn:hover {
+    background-color: var(--accent-orange);
+    border-color: var(--accent-orange);
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 rgba(28, 28, 25, 0.25);
 }
 
 .dropcap-paragraph {
@@ -971,17 +1036,76 @@ a {
 
 .marquee-track {
     display: inline-block;
-    animation: marqueeScroll 20s linear infinite;
+    animation: marqueeScroll 45s linear infinite;
 }
 
 .marquee-section:hover .marquee-track {
     animation-play-state: paused;
 }
 
-.marquee-content span {
+.marquee-content {
+    display: inline-flex;
+    align-items: center;
+}
+
+.marquee-title-item {
+    font-family: var(--font-editorial);
+    font-size: clamp(2.4rem, 5vw, 4.6rem);
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    white-space: nowrap;
+    color: var(--ink-dark);
+}
+
+.marquee-separator {
+    font-family: var(--font-editorial);
+    font-size: 1.6rem;
+    color: var(--accent-orange);
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.marquee-tech-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 2.2vw, 1.65rem);
+    letter-spacing: 0.05em;
+    padding: 6px 14px;
+    border: 1.5px solid var(--ink-dark);
+    background-color: var(--bg-paper);
+    color: var(--ink-dark);
+    margin-right: 12px;
+    white-space: nowrap;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+}
+
+.marquee-tech-pill:hover {
+    background-color: var(--ink-dark);
+    color: var(--bg-paper);
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 0 rgba(28, 28, 25, 0.25);
+}
+
+.tech-icon-svg,
+.marquee-tech-pill i {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    flex-shrink: 0;
+    fill: currentColor;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.marquee-content span.email-badge-wrap {
     font-family: var(--font-editorial);
     font-size: clamp(2.5rem, 5.5vw, 5rem);
-    margin-right: 48px;
+    margin-right: 32px;
     display: inline-flex;
     align-items: center;
     gap: 20px;
@@ -1910,7 +2034,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
     border-bottom: 2px solid var(--ink-dark);
     padding-bottom: 20px;
     flex-wrap: wrap;
@@ -1924,10 +2048,291 @@ a {
     letter-spacing: -0.01em;
 }
 
+.projects-header-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .projects-header-row .editorial-sub {
     max-width: 480px;
     font-size: 1.25rem;
     color: var(--ink-muted);
+}
+
+.github-shelf-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+    letter-spacing: 0.05em;
+    color: var(--ink-dark);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--ink-dark);
+    padding-bottom: 2px;
+    width: fit-content;
+    transition: all 0.2s ease;
+}
+
+.github-shelf-link:hover {
+    color: var(--accent-orange);
+    border-bottom-color: var(--accent-orange);
+    transform: translateX(3px);
+}
+
+/* ==========================================================================
+   HORIZONTAL BOOKSHELF FOR FEATURED PROJECTS (RAK BUKU KESAMPING)
+   ========================================================================== */
+.projects-shelf-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.projects-shelf-instruction {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-editorial);
+    font-size: 1rem;
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+    border-bottom: 1.5px dashed var(--ink-muted);
+}
+
+.projects-shelf-container {
+    display: flex;
+    gap: 14px;
+    min-height: 520px;
+    align-items: stretch;
+    transition: all 0.4s ease;
+}
+
+/* Individual Project Book on Shelf */
+.project-book-card {
+    border: 1.5px solid var(--ink-dark);
+    background-color: var(--bg-paper);
+    display: flex;
+    flex-direction: row;
+    box-shadow: 5px 5px 0px rgba(28, 28, 25, 0.2);
+    overflow: hidden;
+    position: relative;
+    transition: flex 0.45s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Collapsed Book Spine State (Side-by-side standing on shelf) */
+.project-book-card:not(.active) {
+    flex: 0 0 88px;
+    cursor: pointer;
+    background-color: rgba(28, 28, 25, 0.03);
+}
+
+.project-book-card:not(.active):hover {
+    flex: 0 0 98px;
+    box-shadow: 8px 8px 0px rgba(28, 28, 25, 0.3);
+    background-color: rgba(28, 28, 25, 0.07);
+}
+
+.project-book-card:not(.active) .project-spread {
+    display: none;
+}
+
+/* Active / Opened Book State (Unfolded spread on shelf) */
+.project-book-card.active {
+    flex: 1 1 65%;
+    min-width: 480px;
+    box-shadow: 10px 10px 0px rgba(28, 28, 25, 0.28);
+    border-color: var(--ink-dark);
+}
+
+.project-book-card.active .project-spine {
+    border-right: 1.5px solid var(--ink-dark);
+    background-color: var(--ink-dark);
+    color: var(--bg-paper);
+}
+
+.project-book-card.active .project-spine .spine-tech-badge {
+    background-color: var(--accent-orange);
+    color: #fff;
+    border-color: var(--accent-orange);
+}
+
+/* Book Spine Element */
+.project-spine {
+    width: 88px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 8px;
+    user-select: none;
+    position: relative;
+    background: linear-gradient(180deg, rgba(28, 28, 25, 0.05) 0%, rgba(28, 28, 25, 0.02) 100%);
+    transition: background-color 0.35s ease, color 0.35s ease, width 0.35s ease;
+}
+
+.project-book-card:not(.active):hover .project-spine {
+    background-color: var(--ink-dark);
+    color: var(--bg-paper);
+}
+
+.spine-head-band,
+.spine-tail-band {
+    width: 70%;
+    height: 4px;
+    border-top: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    opacity: 0.45;
+}
+
+.spine-vol {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+}
+
+.spine-vertical-wrap {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: auto 0;
+    white-space: nowrap;
+}
+
+.spine-proj-title {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    letter-spacing: 0.05em;
+    line-height: 1;
+}
+
+.spine-proj-sub {
+    font-family: var(--font-editorial);
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+
+.spine-bottom-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.spine-tech-badge {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border: 1px solid currentColor;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.spine-status-icon {
+    font-size: 1.35rem;
+}
+
+/* Expanded Book Spread Container */
+.project-spread {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    background-color: var(--bg-paper);
+}
+
+.project-spread .project-img-wrapper {
+    height: 250px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1.5px solid var(--ink-dark);
+    background-color: #1a1a1a;
+}
+
+.project-spread .project-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(10%) contrast(105%) grayscale(15%);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.project-book-card:hover .project-spread .project-img-wrapper img {
+    transform: scale(1.04);
+    filter: sepia(0%) contrast(100%) grayscale(0%);
+}
+
+.project-spread .project-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+/* The Wooden Bookshelf Ledge Rail & Front Face */
+.shelf-wooden-ledge {
+    margin-top: 0;
+    position: relative;
+    width: 100%;
+}
+
+.shelf-ledge-rail {
+    height: 10px;
+    background: #1C1C19;
+    border-left: 2px solid #1C1C19;
+    border-right: 2px solid #1C1C19;
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.shelf-ledge-front {
+    padding: 8px 16px;
+    background-color: #1C1C19;
+    color: var(--bg-paper);
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------------------------------------------------
+   GRID MODE FOR PROJECTS (When user switches view to GRID)
+   ------------------------------------------------------------- */
+.projects-shelf-container.grid-mode {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    min-height: unset;
+}
+
+.projects-shelf-container.grid-mode .project-book-card {
+    flex: unset !important;
+    width: auto !important;
+    min-width: unset !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-shelf-container.grid-mode .project-spine {
+    display: none !important;
+}
+
+.projects-shelf-container.grid-mode .project-spread {
+    display: flex !important;
+    width: 100%;
+}
+
+.projects-shelf-container.grid-mode + .shelf-wooden-ledge {
+    display: none;
 }
 
 .projects-grid {
@@ -2612,7 +3017,7 @@ a {
         gap: 8px 12px !important;
     }
 
-    /* Featured Projects Grid on Mobile */
+    /* Featured Projects Bookshelf & Grid on Mobile */
     .featured-projects-section {
         padding-top: 28px !important;
         padding-bottom: 36px !important;
@@ -2623,6 +3028,39 @@ a {
         align-items: flex-start !important;
         gap: 10px !important;
         margin-bottom: 24px !important;
+    }
+
+    .projects-shelf-container:not(.grid-mode) {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+        gap: 16px !important;
+        padding-bottom: 12px !important;
+        min-height: unset !important;
+    }
+
+    .projects-shelf-container:not(.grid-mode) .project-book-card {
+        flex: 0 0 85vw !important;
+        width: 85vw !important;
+        min-width: unset !important;
+        scroll-snap-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .projects-shelf-container:not(.grid-mode) .project-book-card .project-spine {
+        display: none !important;
+    }
+
+    .projects-shelf-container:not(.grid-mode) .project-book-card .project-spread {
+        display: flex !important;
+        width: 100% !important;
+    }
+
+    .projects-shelf-container.grid-mode {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
     }
 
     .projects-grid {

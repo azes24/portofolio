@@ -32,6 +32,7 @@
 
     <!-- Fullscreen Navigation Overlay -->
     <div class="fullscreen-nav" id="fullscreenNav">
+        <canvas id="paintDripCanvas" class="paint-drip-canvas"></canvas>
         <div class="nav-top">
             <span>Gresik, Jawa Timur</span>
             <button id="closeNavBtn" class="icon-btn" aria-label="Tutup Menu"><i class="ri-close-line"></i></button>
@@ -42,10 +43,15 @@
             <li><a href="about.html" class="nav-item">About</a></li>
         </ul>
         <div class="nav-socials">
-            <a href="https://wa.me/6285731037913" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line"></i> whatsapp</a> ·
-            <a href="https://instagram.com/azesfx_" target="_blank" rel="noopener noreferrer"><i class="ri-instagram-line"></i> instagram (@azesfx_)</a> ·
-            <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i> github (@azes24)</a> ·
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=f.azizsyaifuddin@gmail.com&su=Tanya%20Portofolio%20%2F%20Peluang%20Kolaborasi%20%E2%80%94%20Fathul%20Aziz%20Saifuddin&body=Halo%20Fathul%20Aziz%2C%0A%0ASaya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi%20terkait%3A%0A%E2%80%A2%20Perihal%20%2F%20Proyek%3A%20%0A%E2%80%A2%20Pesan%20%2F%20Kebutuhan%3A%20%0A%0ATerima%20kasih.%0A%0ASalam%2C%0A%5BNama%20Anda%5D%0A%5BKontak%20%2F%20Instansi%20(Opsional)%5D" target="_blank" rel="noopener noreferrer"><i class="ri-mail-line"></i> email (f.azizsyaifuddin@gmail.com)</a> ·
+            <a href="https://wa.me/6285731037913" target="_blank" rel="noopener noreferrer"><i
+                    class="ri-whatsapp-line"></i> whatsapp</a> ·
+            <a href="https://instagram.com/azesfx_" target="_blank" rel="noopener noreferrer"><i
+                    class="ri-instagram-line"></i> instagram (@azesfx_)</a> ·
+            <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i>
+                github (@azes24)</a> ·
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=f.azizsyaifuddin@gmail.com&su=Tanya%20Portofolio%20%2F%20Peluang%20Kolaborasi%20%E2%80%94%20Fathul%20Aziz%20Saifuddin&body=Halo%20Fathul%20Aziz%2C%0A%0ASaya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi%20terkait%3A%0A%E2%80%A2%20Perihal%20%2F%20Proyek%3A%20%0A%E2%80%A2%20Pesan%20%2F%20Kebutuhan%3A%20%0A%0ATerima%20kasih.%0A%0ASalam%2C%0A%5BNama%20Anda%5D%0A%5BKontak%20%2F%20Instansi%20(Opsional)%5D"
+                target="_blank" rel="noopener noreferrer"><i class="ri-mail-line"></i> email
+                (f.azizsyaifuddin@gmail.com)</a> ·
             <a href="#" class="share-web-btn"><i class="ri-share-forward-line"></i> share link</a>
         </div>
     </div>
@@ -77,20 +83,23 @@
                     </div>
                     <div class="work-header-meta">
                         <div class="profile-hero-author">
-                            <div class="interactive-profile-wrapper profile-author-avatar" role="button" tabindex="0" title="Klik untuk berganti foto profil" aria-label="Klik untuk berganti foto profil" style="background-image: url('images/profile/back.webp'); background-size: cover; background-position: center;">
-                                <img src="images/profile/profil-2.webp" alt="Fathul Aziz Saifuddin" class="interactive-profile-img" data-profile-index="2">
+                            <div class="interactive-profile-wrapper profile-author-avatar" role="button" tabindex="0"
+                                title="Klik untuk berganti foto profil" aria-label="Klik untuk berganti foto profil"
+                                style="background-image: url('images/profile/back.webp'); background-size: cover; background-position: center;">
+                                <img src="images/profile/profil-2.webp" alt="Fathul Aziz Saifuddin"
+                                    class="interactive-profile-img" data-profile-index="2">
                             </div>
                             <div class="profile-author-info">
                                 <span class="profile-author-name">FATHUL AZIZ SAIFUDDIN</span>
                                 <span class="profile-author-desc">Informatics Student · Web Dev &amp; Multimedia</span>
+                                <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="profile-github-btn">
+                                    <i class="ri-github-fill"></i> Kunjungi GitHub Saya <i class="ri-arrow-right-up-line"></i>
+                                </a>
                             </div>
                         </div>
-                        <p class="editorial-sub">Rekam jejak praktikum, rekayasa web,<br>desain multimedia & kepemimpinan (2021 — 2027)</p>
-                        <div style="margin-top: 14px;">
-                            <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="github-pill-btn">
-                                <i class="ri-github-fill"></i> GITHUB REPOSITORY: @azes24 <i class="ri-arrow-right-up-line"></i>
-                            </a>
-                        </div>
+                        <p class="editorial-sub">Rekam jejak praktikum, rekayasa web,<br>desain multimedia &
+                            kepemimpinan (2021 — 2027)</p>
+
                         <div class="view-toggle">
                             <span>MODE TAMPILAN:</span>
                             <button class="toggle-btn active" id="viewShelfBtn">BOOKSHELF</button>
@@ -100,120 +109,217 @@
                 </div>
             </section>
 
-            <!-- 3. FEATURED SOFTWARE & WEB PROJECTS SECTION -->
+                        <!-- 3. FEATURED SOFTWARE & WEB PROJECTS SECTION -->
             <section class="featured-projects-section" id="featured-projects">
                 <div class="projects-header-row">
                     <div class="stamp-box project-stamp">
                         <h2>PROYEK UNGGULAN</h2>
                     </div>
-                    <p class="editorial-sub">Aplikasi web, sistem informasi, dan platform edukasi interaktif dengan source code terbuka & live demo.</p>
+                    <div class="projects-header-desc">
+                        <p class="editorial-sub">Aplikasi web, sistem informasi, dan platform edukasi interaktif dengan source code terbuka &amp; live demo.</p>
+                        <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="github-shelf-link">
+                            <i class="ri-github-fill"></i> KUNJUNGI GITHUB SAYA (@azes24) <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="projects-grid">
-                    <!-- Project 1: NEXLAB -->
-                    <article class="project-card">
-                        <div class="project-img-wrapper">
-                            <img src="images/projects/nexlab.webp" alt="NEXLAB Nexus EthnoSTEM Laboratory">
-                            <span class="project-badge">VIRTUAL LAB & SAINS</span>
-                        </div>
-                        <div class="project-body">
-                            <div>
-                                <div class="project-meta">
-                                    <span>REACT</span> · <span>ETHNOSTEM</span> · <span>VERCEL</span>
-                                </div>
-                                <h3 class="project-title">NEXLAB — Nexus EthnoSTEM Laboratory</h3>
-                                <p class="project-desc">Platform laboratorium virtual yang mengintegrasikan kearifan lokal jamu Madura dengan pembelajaran sains — memahami unsur, senyawa, dan campuran melalui konteks budaya autentik.</p>
-                            </div>
-                            <div class="project-actions">
-                                <a href="https://github.com/azes24/Nexlab" target="_blank" rel="noopener noreferrer" class="project-btn source-btn">
-                                    <i class="ri-github-fill"></i> Source Code <i class="ri-arrow-right-up-line"></i>
-                                </a>
-                                <a href="https://nexlab-olive.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn">
-                                    <i class="ri-external-link-line"></i> Live Demo <i class="ri-arrow-right-up-line"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
+                <div class="projects-shelf-wrapper" id="projectsShelfWrapper">
+                    <div class="bookshelf-instruction projects-shelf-instruction">
+                        <span><i class="ri-cursor-line"></i> <strong>PETUNJUK:</strong> Klik atau arahkan kursor pada buku di rak untuk membuka proyek</span>
+                        <span>RAK BUKU PROYEK (KESAMPING)</span>
+                    </div>
 
-                    <!-- Project 2: Madurese Folklore Hub -->
-                    <article class="project-card">
-                        <div class="project-img-wrapper">
-                            <img src="images/projects/folklore-hub.webp" alt="Madurese Folklore Hub">
-                            <span class="project-badge">EDUKASI & BUDAYA</span>
-                        </div>
-                        <div class="project-body">
-                            <div>
-                                <div class="project-meta">
-                                    <span>HTML</span> · <span>JSON</span> · <span>TYPESCRIPT</span>
+                    <div class="projects-shelf-container" id="projectsShelfContainer">
+                        <!-- Book 1: NEXLAB -->
+                        <article class="project-book-card active" data-book-index="0">
+                            <div class="project-spine">
+                                <div class="spine-head-band"></div>
+                                <span class="spine-vol">VOL. 01</span>
+                                <div class="spine-vertical-wrap">
+                                    <span class="spine-proj-title">NEXLAB &mdash; ETHNOSTEM</span>
+                                    <span class="spine-proj-sub">VIRTUAL LAB &amp; SAINS</span>
                                 </div>
-                                <h3 class="project-title">Madurese Folklore Hub</h3>
-                                <p class="project-desc">Website interaktif edukatif cerita rakyat dan budaya Madura. Project ini lahir berdasarkan kepedulian atas minimnya literasi dan pelestarian budaya pada anak dan remaja di era digital.</p>
+                                <div class="spine-bottom-meta">
+                                    <span class="spine-tech-badge">REACT</span>
+                                    <i class="ri-book-open-line spine-status-icon"></i>
+                                </div>
+                                <div class="spine-tail-band"></div>
                             </div>
-                            <div class="project-actions">
-                                <a href="https://github.com/azes24/madurese" target="_blank" rel="noopener noreferrer" class="project-btn source-btn">
-                                    <i class="ri-github-fill"></i> Source Code <i class="ri-arrow-right-up-line"></i>
-                                </a>
-                                <a href="https://madurafolklore.site.je/" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn">
-                                    <i class="ri-external-link-line"></i> Live Demo <i class="ri-arrow-right-up-line"></i>
-                                </a>
+                            <div class="project-spread">
+                                <div class="project-img-wrapper">
+                                    <img src="images/projects/nexlab.webp" alt="NEXLAB Nexus EthnoSTEM Laboratory">
+                                    <span class="project-badge">VIRTUAL LAB &amp; SAINS</span>
+                                </div>
+                                <div class="project-body">
+                                    <div>
+                                        <div class="project-meta">
+                                            <span>REACT</span> · <span>ETHNOSTEM</span> · <span>VERCEL</span>
+                                        </div>
+                                        <h3 class="project-title">NEXLAB — Nexus EthnoSTEM Laboratory</h3>
+                                        <p class="project-desc">Platform laboratorium virtual yang mengintegrasikan kearifan
+                                            lokal jamu Madura dengan pembelajaran sains — memahami unsur, senyawa, dan campuran
+                                            melalui konteks budaya autentik.</p>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://github.com/azes24/Nexlab" target="_blank" rel="noopener noreferrer"
+                                            class="project-btn source-btn">
+                                            <i class="ri-github-fill"></i> Source Code <i class="ri-arrow-right-up-line"></i>
+                                        </a>
+                                        <a href="https://nexlab-olive.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                            class="project-btn demo-btn">
+                                            <i class="ri-external-link-line"></i> Live Demo <i class="ri-arrow-right-up-line"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Project 3: Website ILSAH Madura -->
-                    <article class="project-card">
-                        <div class="project-img-wrapper">
-                            <img src="images/projects/ilsah-madura.webp" alt="Website Organisasi ILSAH Madura">
-                            <span class="project-badge">WEBSITE ORGANISASI</span>
-                        </div>
-                        <div class="project-body">
-                            <div>
-                                <div class="project-meta">
-                                    <span>PHP</span> · <span>MYSQL</span> · <span>JS</span> · <span>CSS</span>
+                        <!-- Book 2: Folklore Hub -->
+                        <article class="project-book-card" data-book-index="1">
+                            <div class="project-spine">
+                                <div class="spine-head-band"></div>
+                                <span class="spine-vol">VOL. 02</span>
+                                <div class="spine-vertical-wrap">
+                                    <span class="spine-proj-title">FOLKLORE HUB MADURA</span>
+                                    <span class="spine-proj-sub">EDUKASI &amp; BUDAYA</span>
                                 </div>
-                                <h3 class="project-title">Website Resmi ILSAH Madura</h3>
-                                <p class="project-desc">Website resmi organisasi Ikatan Alumni Santri Tarbiyatut Tholabah (ILSAH) Madura untuk pusat publikasi kegiatan, struktur kepengurusan, transparansi warta, dan integrasi anggota.</p>
+                                <div class="spine-bottom-meta">
+                                    <span class="spine-tech-badge">TS / JSON</span>
+                                    <i class="ri-book-open-line spine-status-icon"></i>
+                                </div>
+                                <div class="spine-tail-band"></div>
                             </div>
-                            <div class="project-actions">
-                                <a href="https://github.com/azes24/ilsahMadura" target="_blank" rel="noopener noreferrer" class="project-btn source-btn">
-                                    <i class="ri-github-fill"></i> Source Code <i class="ri-arrow-right-up-line"></i>
-                                </a>
-                                <a href="https://ilsahmadura.page.gd/" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn">
-                                    <i class="ri-external-link-line"></i> Live Demo <i class="ri-arrow-right-up-line"></i>
-                                </a>
+                            <div class="project-spread">
+                                <div class="project-img-wrapper">
+                                    <img src="images/projects/folklore-hub.webp" alt="Madurese Folklore Hub">
+                                    <span class="project-badge">EDUKASI &amp; BUDAYA</span>
+                                </div>
+                                <div class="project-body">
+                                    <div>
+                                        <div class="project-meta">
+                                            <span>HTML</span> · <span>JSON</span> · <span>TYPESCRIPT</span>
+                                        </div>
+                                        <h3 class="project-title">Madurese Folklore Hub</h3>
+                                        <p class="project-desc">Website interaktif edukatif cerita rakyat dan budaya Madura.
+                                            Project ini lahir berdasarkan kepedulian atas minimnya literasi dan pelestarian
+                                            budaya pada anak dan remaja di era digital.</p>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://github.com/azes24/madurese" target="_blank" rel="noopener noreferrer"
+                                            class="project-btn source-btn">
+                                            <i class="ri-github-fill"></i> Source Code <i class="ri-arrow-right-up-line"></i>
+                                        </a>
+                                        <a href="https://madurafolklore.site.je/" target="_blank" rel="noopener noreferrer"
+                                            class="project-btn demo-btn">
+                                            <i class="ri-external-link-line"></i> Live Demo <i class="ri-arrow-right-up-line"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- Project 4: Sistem Peminjaman Perpustakaan (UNIPUSTAKA) -->
-                    <article class="project-card">
-                        <div class="project-img-wrapper">
-                            <img src="images/projects/unipustaka.webp" alt="Sistem Perpustakaan UNIPUSTAKA">
-                            <span class="project-badge">SISTEM INFORMASI</span>
-                        </div>
-                        <div class="project-body">
-                            <div>
-                                <div class="project-meta">
-                                    <span>PHP</span> · <span>MYSQL</span> · <span>CSS</span> · <span>HTML</span>
+                        <!-- Book 3: Website ILSAH Madura -->
+                        <article class="project-book-card" data-book-index="2">
+                            <div class="project-spine">
+                                <div class="spine-head-band"></div>
+                                <span class="spine-vol">VOL. 03</span>
+                                <div class="spine-vertical-wrap">
+                                    <span class="spine-proj-title">WEBSITE ILSAH MADURA</span>
+                                    <span class="spine-proj-sub">ORGANISASI &amp; WARTA</span>
                                 </div>
-                                <h3 class="project-title">UNIPUSTAKA — Perpustakaan Terpadu</h3>
-                                <p class="project-desc">Sistem perpustakaan UNIPUSTAKA dengan 2 portal terpisah (peminjam & admin) yang dilengkapi login autentikasi, katalog buku, transaksi pinjam-kembali, serta manajemen sirkulasi.</p>
+                                <div class="spine-bottom-meta">
+                                    <span class="spine-tech-badge">PHP / MYSQL</span>
+                                    <i class="ri-book-open-line spine-status-icon"></i>
+                                </div>
+                                <div class="spine-tail-band"></div>
                             </div>
-                            <div class="project-actions">
-                                <a href="https://github.com/azes24/Unipustaka" target="_blank" rel="noopener noreferrer" class="project-btn source-btn">
-                                    <i class="ri-github-fill"></i> Source Code <i class="ri-arrow-right-up-line"></i>
-                                </a>
-                                <span class="project-local-badge"><i class="ri-database-2-line"></i> Local Environment (Database System)</span>
+                            <div class="project-spread">
+                                <div class="project-img-wrapper">
+                                    <img src="images/projects/ilsah-madura.webp" alt="Website Organisasi ILSAH Madura">
+                                    <span class="project-badge">WEBSITE ORGANISASI</span>
+                                </div>
+                                <div class="project-body">
+                                    <div>
+                                        <div class="project-meta">
+                                            <span>PHP</span> · <span>MYSQL</span> · <span>JS</span> · <span>CSS</span>
+                                        </div>
+                                        <h3 class="project-title">Website Resmi ILSAH Madura</h3>
+                                        <p class="project-desc">Website resmi organisasi Ikatan Alumni Santri Tarbiyatut
+                                            Tholabah (ILSAH) Madura untuk pusat publikasi kegiatan, struktur kepengurusan,
+                                            transparansi warta, dan integrasi anggota.</p>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://github.com/azes24/ilsahMadura" target="_blank"
+                                            rel="noopener noreferrer" class="project-btn source-btn">
+                                            <i class="ri-github-fill"></i> Source Code <i class="ri-arrow-right-up-line"></i>
+                                        </a>
+                                        <a href="https://ilsahmadura.page.gd/" target="_blank" rel="noopener noreferrer"
+                                            class="project-btn demo-btn">
+                                            <i class="ri-external-link-line"></i> Live Demo <i class="ri-arrow-right-up-line"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                        </article>
+
+                        <!-- Book 4: Sistem Peminjaman Perpustakaan (UNIPUSTAKA) -->
+                        <article class="project-book-card" data-book-index="3">
+                            <div class="project-spine">
+                                <div class="spine-head-band"></div>
+                                <span class="spine-vol">VOL. 04</span>
+                                <div class="spine-vertical-wrap">
+                                    <span class="spine-proj-title">UNIPUSTAKA PERPUS</span>
+                                    <span class="spine-proj-sub">SISTEM INFORMASI</span>
+                                </div>
+                                <div class="spine-bottom-meta">
+                                    <span class="spine-tech-badge">PHP / SQL</span>
+                                    <i class="ri-book-open-line spine-status-icon"></i>
+                                </div>
+                                <div class="spine-tail-band"></div>
+                            </div>
+                            <div class="project-spread">
+                                <div class="project-img-wrapper">
+                                    <img src="images/projects/unipustaka.webp" alt="Sistem Perpustakaan UNIPUSTAKA">
+                                    <span class="project-badge">SISTEM INFORMASI</span>
+                                </div>
+                                <div class="project-body">
+                                    <div>
+                                        <div class="project-meta">
+                                            <span>PHP</span> · <span>MYSQL</span> · <span>CSS</span> · <span>HTML</span>
+                                        </div>
+                                        <h3 class="project-title">UNIPUSTAKA — Perpustakaan Terpadu</h3>
+                                        <p class="project-desc">Sistem perpustakaan UNIPUSTAKA dengan 2 portal terpisah
+                                            (peminjam & admin) yang dilengkapi login autentikasi, katalog buku, transaksi
+                                            pinjam-kembali, serta manajemen sirkulasi.</p>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://github.com/azes24/Unipustaka" target="_blank" rel="noopener noreferrer"
+                                            class="project-btn source-btn">
+                                            <i class="ri-github-fill"></i> Source Code <i class="ri-arrow-right-up-line"></i>
+                                        </a>
+                                        <span class="project-local-badge"><i class="ri-database-2-line"></i> Local Environment
+                                            (Database System)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- The physical wooden/paper shelf ledge below the standing books -->
+                    <div class="shelf-wooden-ledge" id="shelfWoodenLedge">
+                        <div class="shelf-ledge-rail"></div>
+                        <div class="shelf-ledge-front">
+                            <span>RAK REKAYASA PERANGKAT LUNAK &bull; EDISI 2024 &mdash; 2026 &bull; FATHUL AZIZ SAIFUDDIN</span>
                         </div>
-                    </article>
+                    </div>
                 </div>
             </section>
 
             <!-- 4. INTERACTIVE BOOKSHELF / ACCORDION ARCHIVE -->
             <section class="bookshelf-section">
                 <div class="bookshelf-instruction">
-                    <span><i class="ri-cursor-line"></i> <strong>PETUNJUK:</strong> Klik pada baris buku di bawah untuk membuka lipatan detail</span>
+                    <span><i class="ri-cursor-line"></i> <strong>PETUNJUK:</strong> Klik pada baris buku di bawah untuk
+                        membuka lipatan detail</span>
                     <span>ARSIP PRESTASI & PENGALAMAN</span>
                 </div>
 
@@ -223,24 +329,29 @@
                     <article class="book-spine active">
                         <div class="spine-header">
                             <span class="spine-year">2026</span>
-                            <h2 class="spine-title">IICFE UNISZA MALAYSIA <span class="badge-new">BRONZE MEDAL</span></h2>
+                            <h2 class="spine-title">IICFE UNISZA MALAYSIA <span class="badge-new">BRONZE MEDAL</span>
+                            </h2>
                             <span class="spine-category">International Competition / Essay</span>
                             <i class="ri-add-line spine-icon"></i>
                         </div>
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="images/awards/unisza-malaysia.webp"
-                                        alt="IICFE UniSZA Malaysia Bronze Medal">
+                                    <img src="images/awards/IICFE.webp" alt="IICFE UniSZA Malaysia Bronze Medal">
                                 </div>
                                 <div class="spine-details">
                                     <h3>BRONZE MEDAL ESSAY — IICFE UNISZA MALAYSIA</h3>
-                                    <p>Meraih Bronze Medal Essay dalam ajang kompetisi internasional bergengsi IICFE (International Islamic Culture and Fashion Exhibition & Competition) yang diselenggarakan oleh Universiti Sultan Zainal Abidin (UniSZA) Malaysia.</p>
+                                    <p>Meraih Bronze Medal Essay dalam ajang kompetisi internasional bergengsi IICFE
+                                        (International Islamic Culture and Fashion Exhibition & Competition) yang
+                                        diselenggarakan oleh Universiti Sultan Zainal Abidin (UniSZA) Malaysia.</p>
                                     <div class="spine-tags">
-                                        <span>International Essay</span> · <span>UniSZA Malaysia</span> · <span>Academic Writing</span>
+                                        <span>International Essay</span> · <span>UniSZA Malaysia</span> · <span>Academic
+                                            Writing</span>
                                     </div>
-                                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; align-items: center;">
-                                        <a href="about.html" class="inline-cta">PRESTASI LENGKAP <i class="ri-arrow-right-up-line"></i></a>
+                                    <div
+                                        style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; align-items: center;">
+                                        <a href="about.html" class="inline-cta">PRESTASI LENGKAP <i
+                                                class="ri-arrow-right-up-line"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -258,19 +369,19 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="images/awards/praktikum-web.webp"
-                                        alt="Asisten Praktikum Web UTM">
+                                    <img src="images/awards/admin.webp" alt="Asisten Praktikum Web UTM">
                                 </div>
                                 <div class="spine-details">
                                     <h3>ASISTEN PRAKTIKUM PENGEMBANGAN APLIKASI WEB</h3>
-                                    <p>Membimbing mahasiswa S1 Teknik Informatika UTM dalam praktikum Pengembangan Aplikasi Web, menyiapkan modul latihan, menguji kode frontend & backend, serta menilai tugas praktikum.</p>
+                                    <p>Membimbing mahasiswa S1 Teknik Informatika UTM dalam praktikum Pengembangan
+                                        Aplikasi Web, menyiapkan modul latihan, menguji kode frontend & backend, serta
+                                        menilai tugas praktikum.</p>
                                     <div class="spine-tags">
-                                        <span>HTML / CSS / JS</span> · <span>PHP & MySQL</span> · <span>Teaching & Code Review</span>
+                                        <span>HTML / CSS / JS</span> · <span>PHP & MySQL</span> · <span>Teaching & Code
+                                            Review</span>
                                     </div>
-                                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; align-items: center;">
-                                        <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="github-pill-btn" style="padding: 7px 14px; font-size: 0.75rem;">
-                                            <i class="ri-github-fill"></i> GITHUB @azes24 <i class="ri-arrow-right-up-line"></i>
-                                        </a>
+                                    <div
+                                        style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; align-items: center;">
                                         <a href="about.html" class="inline-cta">LIHAT AMANAH <i
                                                 class="ri-arrow-right-up-line"></i></a>
                                     </div>
@@ -290,14 +401,16 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="images/awards/infografis.webp"
-                                        alt="Desain Infografis Juara 2">
+                                    <img src="images/awards/infografis.webp" alt="Desain Infografis Juara 2">
                                 </div>
                                 <div class="spine-details">
                                     <h3>JUARA 2 LOMBA DESAIN INFOGRAFIS UTM</h3>
-                                    <p>Meraih Juara 2 dalam kompetisi desain infografis tingkat Universitas Trunodjoyo Madura, menyajikan informasi kompleks melalui visual data yang komunikatif dan proporsional.</p>
+                                    <p>Meraih Juara 2 dalam kompetisi desain infografis tingkat Universitas Trunodjoyo
+                                        Madura, menyajikan informasi kompleks melalui visual data yang komunikatif dan
+                                        proporsional.</p>
                                     <div class="spine-tags">
-                                        <span>Affinity / Canva</span> · <span>Data Visualization</span> · <span>Typography</span>
+                                        <span>Affinity / Canva</span> · <span>Data Visualization</span> ·
+                                        <span>Typography</span>
                                     </div>
                                     <a href="about.html" class="inline-cta">LIHAT PRESTASI LENGKAP <i
                                             class="ri-arrow-right-up-line"></i></a>
@@ -317,17 +430,19 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="images/awards/lidm-utm.webp"
-                                        alt="Tim LIDM UTM">
+                                    <img src="images/awards/lidm.webp" alt="Tim LIDM UTM">
                                 </div>
                                 <div class="spine-details">
                                     <h3>JUARA 3 TIM SELEKSI INTERNAL LIDM UTM</h3>
-                                    <p>Menjadi bagian dari tim peraih Juara 3 pada seleksi internal Lomba Inovasi Digital Mahasiswa (LIDM) Universitas Trunodjoyo Madura untuk kategori inovasi teknologi pendidikan dan karya digital.</p>
+                                    <p>Menjadi bagian dari tim peraih Juara 3 pada seleksi internal Lomba Inovasi
+                                        Digital Mahasiswa (LIDM) Universitas Trunodjoyo Madura untuk kategori inovasi
+                                        teknologi pendidikan dan karya digital.</p>
                                     <div class="spine-tags">
-                                        <span>Digital Innovation</span> · <span>UI/UX Prototyping</span> · <span>Collaboration</span>
+                                        <span>Digital Innovation</span> · <span>UI/UX Prototyping</span> ·
+                                        <span>Collaboration</span>
                                     </div>
-                                    <a href="about.html" class="inline-cta">PELAJARI KARYA <i
-                                            class="ri-arrow-right-up-line"></i></a>
+                                    <a href="https://www.instagram.com/p/DahwjPdj6cd/?img_index=2"
+                                        class="inline-cta">PENGUMUMAN RESMI<i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -344,19 +459,18 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="https://images.unsplash.com/photo-1516116211227-bbc157b85e05?auto=format&fit=crop&w=900&q=80"
-                                        alt="Struktur Data">
+                                    <img src="images/awards/p strukdat (1).webp" alt="Struktur Data">
                                 </div>
                                 <div class="spine-details">
                                     <h3>ASISTEN PRAKTIKUM STRUKTUR DATA UTM</h3>
-                                    <p>Membimbing mahasiswa dalam memahami konsep Linked List, Stack, Queue, Tree, Graph, serta optimasi efisiensi algoritma dan kompleksitas waktu (Big-O).</p>
+                                    <p>Membimbing mahasiswa dalam memahami konsep Linked List, Stack, Queue, Tree,
+                                        Graph, serta optimasi efisiensi algoritma dan kompleksitas waktu (Big-O).</p>
                                     <div class="spine-tags">
-                                        <span>C++ / Python</span> · <span>Data Structures</span> · <span>Algorithm Analysis</span>
+                                        <span>C++ / Python</span> · <span>Data Structures</span> · <span>Algorithm
+                                            Analysis</span>
                                     </div>
-                                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; align-items: center;">
-                                        <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="github-pill-btn" style="padding: 7px 14px; font-size: 0.75rem;">
-                                            <i class="ri-github-fill"></i> REPO ALGORITMA <i class="ri-arrow-right-up-line"></i>
-                                        </a>
+                                    <div
+                                        style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; align-items: center;">
                                         <a href="about.html" class="inline-cta">EXPLORE AMANAH <i
                                                 class="ri-arrow-right-up-line"></i></a>
                                     </div>
@@ -376,17 +490,19 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80"
-                                        alt="Lab ID Eksak">
+                                    <img src="images/awards/admin.webp" alt="Lab ID Eksak">
                                 </div>
                                 <div class="spine-details">
                                     <h3>PENGELOLA ADMINISTRASI LAB ID EKSAK</h3>
-                                    <p>Mengelola administrasi laboratorium, pencatatan inventaris perangkat keras, koordinasi jadwal operasional praktikum, serta pemeliharaan sistem komputer di laboratorium ID Eksak UTM.</p>
+                                    <p>Mengelola administrasi laboratorium, pencatatan inventaris perangkat keras,
+                                        koordinasi jadwal operasional praktikum, serta pemeliharaan sistem komputer di
+                                        laboratorium ID Eksak UTM.</p>
                                     <div class="spine-tags">
-                                        <span>Administrasi Komputasi</span> · <span>Lab Operations</span> · <span>Inventaris</span>
+                                        <span>Administrasi Komputasi</span> · <span>Lab Operations</span> ·
+                                        <span>Inventaris</span>
                                     </div>
-                                    <a href="about.html" class="inline-cta">LIHAT DETAIL LAB <i
-                                            class="ri-arrow-right-up-line"></i></a>
+                                    <a href="https://www.instagram.com/p/DUf2bgOk-Zz/?img_index=7"
+                                        class="inline-cta">LIHAT DETAIL LAB <i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -403,17 +519,19 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="images/awards/videografi.webp"
-                                        alt="Videografi PRODISTIK ITS">
+                                    <img src="images/awards/sertif PROCOMMIT.webp" alt="Videografi PRODISTIK ITS">
                                 </div>
                                 <div class="spine-details">
                                     <h3>FINALIS LOMBA VIDEOGRAFI TINGKAT JAWA TIMUR</h3>
-                                    <p>Memproduksi video dokumenter sinematik berdurasi kreatif pada ajang kompetisi PRODISTIK ITS, mengombinasikan teknik pengambilan gambar, sound scoring, dan editing dinamis.</p>
+                                    <p>Memproduksi video dokumenter sinematik berdurasi kreatif pada ajang kompetisi
+                                        PRODISTIK ITS, mengombinasikan teknik pengambilan gambar, sound scoring, dan
+                                        editing dinamis.</p>
                                     <div class="spine-tags">
-                                        <span>Adobe Premiere</span> · <span>After Effects</span> · <span>Cinematography</span>
+                                        <span>Adobe Premiere</span> · <span>After Effects</span> ·
+                                        <span>Cinematography</span>
                                     </div>
-                                    <a href="about.html" class="inline-cta">EXPLORE MULTIMEDIA <i
-                                            class="ri-arrow-right-up-line"></i></a>
+                                    <a href="https://www.google.com/search?q=procommit+2023+lomba+video+Iklan+Layanan+Masyarakat&sca_esv=db1362d5ccebe674&rlz=1C1GCEA_enID1139ID1139&sxsrf=APpeQnu8sXvyQu7N3HF28VrPXOtuqgRk1w%3A1792536699630&ei=e_DXauH8JdSW4-EP3OnIiQc&biw=1536&bih=695&uact=5&oq=procommit+2023+lomba+video+Iklan+Layanan+Masyarakat&gs_lp=Egxnd3Mtd2l6LXNlcnAiM3Byb2NvbW1pdCAyMDIzIGxvbWJhIHZpZGVvIElrbGFuIExheWFuYW4gTWFzeWFyYWthdDIFEAAY7wUyBRAAGO8FMgUQABjvBTIFEAAY7wUyBRAAGO8FSLMJUOwBWIAFcAF4AJABAJgBggGgAdQBqgEDMS4xuAEDyAEA-AEB-AECmAIDoAKFA8ICCBAAGO8FGLADwgILEAAYgAQYogQYsAPCAgUQIRigAZgDAIgGAZAGBZIHBTEuMS4xoAe7BrIHBTAuMS4xuAfRAsIHBTMtMS4yyAdBgAgB&sclient=gws-wiz-serp"
+                                        class="inline-cta">EXPLORE LOMBA <i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -430,19 +548,19 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80"
-                                        alt="Algoritma & Pemrograman">
+                                    <img src="images/awards/p alpro.webp" alt="Algoritma & Pemrograman">
                                 </div>
                                 <div class="spine-details">
                                     <h3>ASISTEN PRAKTIKUM ALPRO UTM</h3>
-                                    <p>Membantu mahasiswa tingkat awal dalam memahami dasar-dasar logika pemrograman, variabel, percabangan, perulangan, fungsi, array, dan paradigma computational thinking.</p>
+                                    <p>Membantu mahasiswa tingkat awal dalam memahami dasar-dasar logika pemrograman,
+                                        variabel, percabangan, perulangan, fungsi, array, dan paradigma computational
+                                        thinking.</p>
                                     <div class="spine-tags">
-                                        <span>Python Programming</span> · <span>Logic & Flow</span> · <span>Problem Solving</span>
+                                        <span>Python Programming</span> · <span>Logic & Flow</span> · <span>Problem
+                                            Solving</span>
                                     </div>
-                                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; align-items: center;">
-                                        <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="github-pill-btn" style="padding: 7px 14px; font-size: 0.75rem;">
-                                            <i class="ri-github-fill"></i> SCRIPT PYTHON <i class="ri-arrow-right-up-line"></i>
-                                        </a>
+                                    <div
+                                        style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; align-items: center;">
                                         <a href="about.html" class="inline-cta">LIHAT RIWAYAT <i
                                                 class="ri-arrow-right-up-line"></i></a>
                                     </div>
@@ -462,16 +580,19 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="images/awards/ilsah-leadership.webp"
-                                        alt="Kepemimpinan ILSAH Madura">
+                                    <img src="images/awards/ilsah.webp" alt="Kepemimpinan ILSAH Madura">
                                 </div>
                                 <div class="spine-details">
                                     <h3>KEPEMIMPINAN ORGANISASI ILSAH MADURA</h3>
-                                    <p>Memimpin arah gerak organisasi Ikatan Alumni Santri Tarbiyatut Tholabah (ILSAH) Madura periode 2025/2026, mengoordinasikan seluruh jajaran kepengurusan, bertanggung jawab atas pelaksanaan program kerja, pelantikan akbar, dan Musyawarah Besar (MUBES).</p>
+                                    <p>Memimpin arah gerak organisasi Ikatan Alumni Santri Tarbiyatut Tholabah (ILSAH)
+                                        Madura periode 2025/2026, mengoordinasikan seluruh jajaran kepengurusan,
+                                        bertanggung jawab atas pelaksanaan program kerja, pelantikan akbar, dan
+                                        Musyawarah Besar (MUBES).</p>
                                     <div class="spine-tags">
-                                        <span>Leadership</span> · <span>Team Management</span> · <span>Public Speaking</span>
+                                        <span>Leadership</span> · <span>Team Management</span> · <span>Public
+                                            Speaking</span>
                                     </div>
-                                    <a href="about.html" class="inline-cta">BACA PROFIL ORGANISASI <i
+                                    <a href="https://ilsahmadura.page.gd/" class="inline-cta">BACA PROFIL ORGANISASI <i
                                             class="ri-arrow-right-up-line"></i></a>
                                 </div>
                             </div>
@@ -489,17 +610,19 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="images/awards/esai-sore.webp"
-                                        alt="Esai Ilmiah SORE 2">
+                                    <img src="images/awards/sore.webp" alt="Esai Ilmiah SORE 2">
                                 </div>
                                 <div class="spine-details">
                                     <h3>SORE 2 NATIONAL COMPETITION</h3>
-                                    <p>Meraih Bronze Medal pada kompetisi esai ilmiah nasional, mengkaji isu strategis teknologi dan sosial dengan kerangka riset ilmiah yang terstruktur serta solusi yang inovatif.</p>
+                                    <p>Meraih Bronze Medal pada kompetisi esai ilmiah nasional, mengkaji isu strategis
+                                        teknologi dan sosial dengan kerangka riset ilmiah yang terstruktur serta solusi
+                                        yang inovatif.</p>
                                     <div class="spine-tags">
-                                        <span>Academic Writing</span> · <span>Critical Thinking</span> · <span>Research</span>
+                                        <span>Academic Writing</span> · <span>Critical Thinking</span> ·
+                                        <span>Research</span>
                                     </div>
-                                    <a href="about.html" class="inline-cta">LIHAT PENGHARGAAN <i
-                                            class="ri-arrow-right-up-line"></i></a>
+                                    <a href="https://www.instagram.com/p/DcxwfwGGjAJ/?img_index=4"
+                                        class="inline-cta">LIHAT DOKUMENTASI<i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -516,17 +639,19 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=900&q=80"
-                                        alt="UKM Triple-C">
+                                    <img src="images/awards/Humas infokom.webp" alt="UKM Triple-C">
                                 </div>
                                 <div class="spine-details">
                                     <h3>DIVISI HUMAS DAN INFOKOM</h3>
-                                    <p>Mengelola hubungan masyarakat, publikasi media sosial, penyusunan siaran pers, serta konten visual untuk UKM komputasi dan teknologi informasi Triple-C Universitas Trunodjoyo Madura.</p>
+                                    <p>Mengelola hubungan masyarakat, publikasi media sosial, penyusunan siaran pers,
+                                        serta konten visual untuk UKM komputasi dan teknologi informasi Triple-C
+                                        Universitas Trunodjoyo Madura.</p>
                                     <div class="spine-tags">
-                                        <span>Public Relations</span> · <span>Content Strategy</span> · <span>Branding</span>
+                                        <span>Public Relations</span> · <span>Content Strategy</span> ·
+                                        <span>Branding</span>
                                     </div>
-                                    <a href="about.html" class="inline-cta">DETAIL DIVISI <i
-                                            class="ri-arrow-right-up-line"></i></a>
+                                    <a href="https://www.instagram.com/p/DVnRjjGGh7_/?img_index=1"
+                                        class="inline-cta">LIHAT DIVISI<i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -543,17 +668,18 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80"
-                                        alt="GEMA Lowayu">
+                                    <img src="images/awards/kominfo.webp" alt="GEMA Lowayu">
                                 </div>
                                 <div class="spine-details">
                                     <h3>KOMUNIKASI, INFORMASI & PUBLIKASI</h3>
-                                    <p>Mengoordinasikan saluran komunikasi publik, penyampaian informasi kegiatan mahasiswa, dokumentasi event, dan penerbitan materi edukasi bagi Gerakan Mahasiswa Lowayu.</p>
+                                    <p>Mengoordinasikan saluran komunikasi publik, penyampaian informasi kegiatan
+                                        mahasiswa, dokumentasi event, dan penerbitan materi edukasi bagi Gerakan
+                                        Mahasiswa Lowayu.</p>
                                     <div class="spine-tags">
                                         <span>Social Media</span> · <span>Campaign</span> · <span>Documentation</span>
                                     </div>
-                                    <a href="about.html" class="inline-cta">PELAJARI PROGRAM <i
-                                            class="ri-arrow-right-up-line"></i></a>
+                                    <a href="https://www.instagram.com/p/DULIfzmE5Dr/?img_index=1"
+                                        class="inline-cta">EXPLORE ORGANISASI<i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -570,14 +696,16 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80"
-                                        alt="Creative Summit">
+                                    <img src="images/awards/creative summ.webp" alt="Creative Summit">
                                 </div>
                                 <div class="spine-details">
                                     <h3>TRIPLE-C × GOOGLE DEVELOPER GROUPS ON CAMPUS</h3>
-                                    <p>Berperan sebagai Sie Publikasi, Dekorasi & Dokumentasi (PDD) dalam kolaborasi akbar Creative Summit bersama GDGoC UTM untuk menghadirkan seminar dan workshop teknologi.</p>
+                                    <p>Berperan sebagai Sie Publikasi, Dekorasi & Dokumentasi (PDD) dalam kolaborasi
+                                        akbar Creative Summit bersama GDGoC UTM untuk menghadirkan seminar dan workshop
+                                        teknologi.</p>
                                     <div class="spine-tags">
-                                        <span>Event Media</span> · <span>Live Documentation</span> · <span>Visual Identity</span>
+                                        <span>Event Media</span> · <span>Live Documentation</span> · <span>Visual
+                                            Identity</span>
                                     </div>
                                     <a href="about.html" class="inline-cta">ARSIP KEPANITIAAN <i
                                             class="ri-arrow-right-up-line"></i></a>
@@ -597,12 +725,13 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"
-                                        alt="Tutor Baca Kitab">
+                                    <img src="images/awards/pondok kitab.webp" alt="Tutor Baca Kitab">
                                 </div>
                                 <div class="spine-details">
                                     <h3>PENGAJARAN & PEMBINAAN SANTRI</h3>
-                                    <p>Mengajar metode praktis membaca kitab kuning Al-Miftah lil Ulum di Pondok Pesantren Tarbiyatut Tholabah, membina puluhan santri menguasai kaidah nahwu, sharaf, dan pemahaman teks klasik.</p>
+                                    <p>Mengajar metode praktis membaca kitab kuning Al-Miftah lil Ulum di Pondok
+                                        Pesantren Tarbiyatut Tholabah, membina puluhan santri menguasai kaidah nahwu,
+                                        sharaf, dan pemahaman teks klasik.</p>
                                     <div class="spine-tags">
                                         <span>Pedagogi</span> · <span>Metode Al-Miftah</span> · <span>Mentorship</span>
                                     </div>
@@ -624,17 +753,19 @@
                         <div class="spine-content">
                             <div class="spine-inner-grid">
                                 <div class="img-wrapper">
-                                    <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=900&q=80"
-                                        alt="Majalah An-Nashihah">
+                                    <img src="images/awards/pers majalah.webp" alt="Majalah An-Nashihah">
                                 </div>
                                 <div class="spine-details">
                                     <h3>SEKRETARIS & REDAKSI PENERBITAN</h3>
-                                    <p>Mengelola administrasi kearsipan, korespondensi lembaga pers siswa, serta berkontribusi langsung dalam penyusunan artikel, tata letak (layouting), dan penerbitan edisi majalah cetak An-Nashihah.</p>
+                                    <p>Mengelola administrasi kearsipan, korespondensi lembaga pers siswa, serta
+                                        berkontribusi langsung dalam penyusunan artikel, tata letak (layouting), dan
+                                        penerbitan edisi majalah cetak An-Nashihah.</p>
                                     <div class="spine-tags">
-                                        <span>Editorial Layout</span> · <span>Arsip & Pers</span> · <span>Publishing</span>
+                                        <span>Editorial Layout</span> · <span>Arsip & Pers</span> ·
+                                        <span>Publishing</span>
                                     </div>
-                                    <a href="about.html" class="inline-cta">EXPLORE ARSIP <i
-                                            class="ri-arrow-right-up-line"></i></a>
+                                    <a href="https://online.pubhtml5.com/zgomb/wkaw/" class="inline-cta">EXPLORE ARSIP
+                                        <i class="ri-arrow-right-up-line"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -648,17 +779,23 @@
                 <div class="work-feature-left">
                     <div class="upcoming-feature-card">
                         <span class="hurrah-tag">SOROTAN PROYEK</span>
-                        <h3 class="work-feature-title">WEBSITE RESMI ILSAH MADURA <span class="badge-new">NEW</span></h3>
+                        <h3 class="work-feature-title">WEBSITE RESMI ILSAH MADURA <span class="badge-new">NEW</span>
+                        </h3>
                         <div class="img-wrapper">
                             <img src="images/projects/ilsah-madura.webp"
                                 alt="Website Resmi ILSAH Madura (Alumni Santri Tarbiyatut Tholabah)">
                         </div>
-                        <p class="editorial-sub">Website resmi organisasi Ikatan Alumni Santri Tarbiyatut Tholabah (ILSAH) Madura — platform digital untuk pusat publikasi kegiatan, transparansi warta organisasi, direktori kepengurusan, dan integrasi jejaring alumni santri.</p>
+                        <p class="editorial-sub">Website resmi organisasi Ikatan Alumni Santri Tarbiyatut Tholabah
+                            (ILSAH) Madura — platform digital untuk pusat publikasi kegiatan, transparansi warta
+                            organisasi, direktori kepengurusan, dan integrasi jejaring alumni santri.</p>
                         <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
-                            <a href="https://ilsahmadura.page.gd/" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn" style="font-size: 0.85rem; padding: 8px 16px;">
-                                <i class="ri-external-link-line"></i> BUKA LIVE DEMO <i class="ri-arrow-right-up-line"></i>
+                            <a href="https://ilsahmadura.page.gd/" target="_blank" rel="noopener noreferrer"
+                                class="project-btn demo-btn" style="font-size: 0.85rem; padding: 8px 16px;">
+                                <i class="ri-external-link-line"></i> BUKA LIVE DEMO <i
+                                    class="ri-arrow-right-up-line"></i>
                             </a>
-                            <a href="https://github.com/azes24/ilsahMadura" target="_blank" rel="noopener noreferrer" class="project-btn source-btn" style="font-size: 0.85rem; padding: 8px 16px;">
+                            <a href="https://github.com/azes24/ilsahMadura" target="_blank" rel="noopener noreferrer"
+                                class="project-btn source-btn" style="font-size: 0.85rem; padding: 8px 16px;">
                                 <i class="ri-github-fill"></i> SOURCE CODE <i class="ri-arrow-right-up-line"></i>
                             </a>
                         </div>
@@ -670,8 +807,10 @@
                         <div class="stamp-box">
                             <h2>KONTAK!</h2>
                         </div>
-                        <p class="talk-lead">Sedang mencari rekan tim<br><u>pengembang web & multimedia</u>?<br>Mari ciptakan sesuatu yang luar biasa.</p>
-                        <a href="https://wa.me/6285731037913" target="_blank" rel="noopener noreferrer" class="oval-cta">
+                        <p class="talk-lead">Sedang mencari rekan tim<br><u>pengembang web & multimedia</u>?<br>Mari
+                            ciptakan sesuatu yang luar biasa.</p>
+                        <a href="https://wa.me/6285731037913" target="_blank" rel="noopener noreferrer"
+                            class="oval-cta">
                             <span class="cta-text">CHAT WHATSAPP</span>
                             <i class="ri-whatsapp-line cta-arrow"></i>
                         </a>
@@ -682,15 +821,47 @@
             <!-- 5. INFINITE MARQUEE CTA & FOOTER -->
             <section class="marquee-section">
                 <div class="marquee-track">
-                    <div class="marquee-content">
-                        <span>Mari berkolaborasi & terhubung <a href="https://mail.google.com/mail/?view=cm&fs=1&to=f.azizsyaifuddin@gmail.com&su=Tanya%20Portofolio%20%2F%20Peluang%20Kolaborasi%20%E2%80%94%20Fathul%20Aziz%20Saifuddin&body=Halo%20Fathul%20Aziz%2C%0A%0ASaya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi%20terkait%3A%0A%E2%80%A2%20Perihal%20%2F%20Proyek%3A%20%0A%E2%80%A2%20Pesan%20%2F%20Kebutuhan%3A%20%0A%0ATerima%20kasih.%0A%0ASalam%2C%0A%5BNama%20Anda%5D%0A%5BKontak%20%2F%20Instansi%20(Opsional)%5D"
+<div class="marquee-content">
+                        <span class="marquee-title-item">Mari berkolaborasi & terhubung <a
+                                href="https://mail.google.com/mail/?view=cm&fs=1&to=f.azizsyaifuddin@gmail.com&su=Tanya%20Portofolio%20%2F%20Peluang%20Kolaborasi%20%E2%80%94%20Fathul%20Aziz%20Saifuddin&body=Halo%20Fathul%20Aziz%2C%0A%0ASaya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi%20terkait%3A%0A%E2%80%A2%20Perihal%20%2F%20Proyek%3A%20%0A%E2%80%A2%20Pesan%20%2F%20Kebutuhan%3A%20%0A%0ATerima%20kasih.%0A%0ASalam%2C%0A%5BNama%20Anda%5D%0A%5BKontak%20%2F%20Instansi%20(Opsional)%5D"
                                 target="_blank" rel="noopener noreferrer" class="email-badge">HUBUNGI SAYA</a></span>
-                        <span>Mari berkolaborasi & terhubung <a href="https://mail.google.com/mail/?view=cm&fs=1&to=f.azizsyaifuddin@gmail.com&su=Tanya%20Portofolio%20%2F%20Peluang%20Kolaborasi%20%E2%80%94%20Fathul%20Aziz%20Saifuddin&body=Halo%20Fathul%20Aziz%2C%0A%0ASaya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi%20terkait%3A%0A%E2%80%A2%20Perihal%20%2F%20Proyek%3A%20%0A%E2%80%A2%20Pesan%20%2F%20Kebutuhan%3A%20%0A%0ATerima%20kasih.%0A%0ASalam%2C%0A%5BNama%20Anda%5D%0A%5BKontak%20%2F%20Instansi%20(Opsional)%5D"
+                        <span class="marquee-separator">✦</span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.91 2C6.84 2 7.16 4.21 7.16 4.21l.01 2.29h4.84v.69H5.17S2 6.83 2 11.93c0 5.08 2.77 4.9 2.77 4.9h1.64v-2.31s-.09-2.77 2.73-2.77h4.69v-.77H9.13s-2.61-.17-2.61-2.68c0-2.5 2.28-2.43 2.28-2.43h6.91s2.51.04 2.51 2.48v1.89h1.67s2.12.02 2.12-4.9c0-4.94-4.89-4.92-4.89-4.92h-5.21zm-2.07 1.55a.78.78 0 1 1 0 1.56.78.78 0 0 1 0-1.56zm4.25 8.62v.77h4.69s2.61.17 2.61 2.68c0 2.51-2.28 2.44-2.28 2.44h-6.91s-2.52-.05-2.52-2.48V13.7H7.72S6.9 13.67 6.9 18.59c0 4.94 4.88 4.92 4.88 4.92h5.22c5.07 0 4.75-2.21 4.75-2.21l-.01-2.29h-4.84v-.69h6.85S22 17.96 22 12.87c0-5.08-2.77-4.9-2.77-4.9h-1.65v2.31s.1 2.77-2.72 2.77h-4.69zm2.08 8.77a.78.78 0 1 1 0-1.56.78.78 0 0 1 0 1.56z"/></svg> <span>PYTHON</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2L3 5.3l1.36 15.34L12 23.5l7.64-2.85L21 5.3 12 2zm6.2 6.1H8.5l.26 2.9h9.18l-.75 8.36L12 21.31l-5.19-1.95-.36-4.05h2.52l.18 2.05 2.85 1.07 2.85-1.07.38-4.26H6.29L5.5 5.9h13.2l-.5 2.2z"/></svg> <span>HTML5</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2L3 5.3l1.36 15.34L12 23.5l7.64-2.86L21 5.3 12 2zm6.2 6.1H8.5l.26 2.9h9.18l-.75 8.35-5.19 1.95-5.19-1.95-.36-4.05h2.52l.18 2.05 2.85 1.07 2.85-1.07.38-4.25H6.28L5.5 5.9h13.2l-.5 2.2z"/></svg> <span>CSS3</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3 3h18v18H3V3zm14.49 13.98c-.78 1.28-2.02 1.63-3.39 1.4-.41-.07-.79-.22-1.12-.42-.51-.31-.8-.74-.88-1.32.74-.23 1.48-.44 2.23-.67.09.43.32.72.78.82.49.11 1.05-.04 1.25-.53.29-.69.04-1.57-.65-1.92-.37-.19-.77-.32-1.18-.46-.77-.26-1.55-.51-2.22-.97-.9-.62-1.28-1.5-1.13-2.58.17-1.2 1.05-2.06 2.2-2.31.78-.17 1.56-.12 2.32.14.73.25 1.28.74 1.55 1.48-.73.23-1.46.46-2.2.69-.13-.37-.36-.61-.79-.67-.4-.05-.8.07-1 .42-.23.4-.11.83.27 1.08.38.25.82.4 1.24.58.82.35 1.63.7 2.28 1.34.82.8.96 1.84.69 2.92zm-5.69-.87c-.24 1.48-1.17 2.31-2.56 2.39-1.38.08-2.39-.62-2.81-1.93.75-.24 1.49-.47 2.24-.71.18.52.5.83 1.05.77.45-.05.79-.38.84-.85.1-.96.02-1.94.02-2.91 0-1.07.02-2.14 0-3.21h2.24c-.02 2.15-.02 4.3-.02 6.45z"/></svg> <span>JAVASCRIPT</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 3C6.48 3 2 7.03 2 12s4.48 9 10 9 10-4.03 10-9-4.48-9-10-9zm-5.8 11.8h-1.6l1.8-5.6h2.8c1.5 0 2.4.7 2 2-.4 1.3-1.7 2-3.1 2h-1.2l-.7 1.6zm2.2-3.4h.8c.8 0 1.3-.3 1.5-.9.2-.5-.1-.8-.8-.8h-.8l-.7 1.7zm7.4 3.4h-1.6l1.8-5.6h2.8c1.5 0 2.4.7 2 2-.4 1.3-1.7 2-3.1 2h-1.2l-.7 1.6zm2.2-3.4h.8c.8 0 1.3-.3 1.5-.9.2-.5-.1-.8-.8-.8h-.8l-.7 1.7zm-5.2 3.4h-1.6l1.8-5.6h1.6l-1.8 5.6z"/></svg> <span>PHP</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.78 12.87c-.12-.39-.42-.69-.8-.83-.78-.29-1.57-.49-2.39-.6-1.53-.21-3.07-.15-4.57.19-.38.09-.76.2-1.12.33-.51.19-1.05.29-1.6.29-.4 0-.8-.06-1.18-.17-.79-.23-1.42-.77-1.71-1.52-.39-1.01-.22-2.14.43-3 .62-.82 1.57-1.32 2.61-1.37.52-.03 1.04.05 1.54.23.47.17.99.19 1.48.06.49-.13.91-.42 1.22-.82.38-.5.54-1.14.44-1.77-.1-.63-.44-1.19-.94-1.57-.5-.38-1.13-.56-1.76-.5-1.92.18-3.66 1.09-4.88 2.57-1.24 1.5-1.76 3.44-1.43 5.37.33 1.93 1.48 3.59 3.16 4.56.9.52 1.91.82 2.95.88 1.1.06 2.19-.11 3.23-.49.97-.36 2-.51 3.03-.45.89.05 1.77.26 2.6.63.35.16.76.12 1.08-.09.32-.22.5-.58.48-.97-.02-.38-.22-.72-.53-.94z"/></svg> <span>MYSQL</span></span>
+                        <span class="marquee-tech-pill"><i class="ri-node-tree"></i> <span>STRUKTUR DATA & ALGORITMA</span></span>
+                        <span class="marquee-tech-pill"><i class="ri-code-s-slash-line"></i> <span>WEB DEVELOPMENT</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.25 14.5c-2.4 0-4.25-1.8-4.25-4.45 0-2.85 2.1-4.75 4.65-4.75 1.65 0 2.85.75 3.3 1.8l-1.8.9c-.3-.65-.85-1-1.5-1-1.4 0-2.4 1.2-2.4 3.05 0 1.7 1.05 2.85 2.45 2.85.8 0 1.45-.45 1.8-1.15l1.7.95c-.65 1.1-1.85 1.75-3.95 1.75z"/></svg> <span>CANVA</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M14.62 3.12L7.38 15.65 3 20.88h18l-4.2-4.88-2.18-12.88zm-2.62 4.14l1.32 7.78-4.22.42 2.9-8.2zm4.12 8.2l2.36 2.74H5.52l2.84-3.34 7.76.6z"/></svg> <span>AFFINITY</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3 3h18v18H3V3zm3.5 4v10h2.4v-3.6h1.8c2.1 0 3.3-1.1 3.3-3.2 0-2.1-1.2-3.2-3.3-3.2H6.5zm2.4 2.1h1.6c.8 0 1.3.4 1.3 1.1 0 .7-.5 1.1-1.3 1.1H8.9V9.1zm6 3.4v4.5h2.2v-2.8c0-1.1.6-1.5 1.5-1.5h.3V10.4c-.8 0-1.5.4-1.8 1.1v-1h-2.2v2z"/></svg> <span>PREMIERE PRO</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3 3h18v18H3V3zm2.5 14h2.2l.7-2.3h2.8l.7 2.3h2.2L10.3 7h-2.1L5.5 17zm3.4-4.2l.9-3.2.9 3.2H8.9zm7.3 1.3c0 .8.6 1.3 1.4 1.3.7 0 1.2-.3 1.5-.7l1.4 1.1c-.6.9-1.6 1.4-2.9 1.4-2.2 0-3.5-1.5-3.5-3.5 0-2.1 1.4-3.6 3.4-3.6 2.1 0 3.2 1.4 3.2 3.3v.7h-4.5zm2.4-1.4c0-.6-.4-1.1-1.1-1.1-.6 0-1.1.4-1.2 1.1h2.3z"/></svg> <span>AFTER EFFECTS</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M4 6l7 5-7 5V6zm16 0l-7 5 7 5V6zm-9 6l1.2-1 1.2 1-.9.8h-.6l.3-.8z"/></svg> <span>CAPCUT</span></span>
+                        <span class="marquee-tech-pill"><i class="ri-layout-masonry-line"></i> <span>DESAIN INFOGRAFIS</span></span>
+                        <span class="marquee-tech-pill"><i class="ri-movie-2-line"></i> <span>VIDEOGRAFI & DOKUMENTASI</span></span>
+                        <span class="marquee-separator">✦</span>
+                        <span class="marquee-title-item">Mari berkolaborasi & terhubung <a
+                                href="https://mail.google.com/mail/?view=cm&fs=1&to=f.azizsyaifuddin@gmail.com&su=Tanya%20Portofolio%20%2F%20Peluang%20Kolaborasi%20%E2%80%94%20Fathul%20Aziz%20Saifuddin&body=Halo%20Fathul%20Aziz%2C%0A%0ASaya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi%20terkait%3A%0A%E2%80%A2%20Perihal%20%2F%20Proyek%3A%20%0A%E2%80%A2%20Pesan%20%2F%20Kebutuhan%3A%20%0A%0ATerima%20kasih.%0A%0ASalam%2C%0A%5BNama%20Anda%5D%0A%5BKontak%20%2F%20Instansi%20(Opsional)%5D"
                                 target="_blank" rel="noopener noreferrer" class="email-badge">HUBUNGI SAYA</a></span>
-                        <span>Mari berkolaborasi & terhubung <a href="https://mail.google.com/mail/?view=cm&fs=1&to=f.azizsyaifuddin@gmail.com&su=Tanya%20Portofolio%20%2F%20Peluang%20Kolaborasi%20%E2%80%94%20Fathul%20Aziz%20Saifuddin&body=Halo%20Fathul%20Aziz%2C%0A%0ASaya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi%20terkait%3A%0A%E2%80%A2%20Perihal%20%2F%20Proyek%3A%20%0A%E2%80%A2%20Pesan%20%2F%20Kebutuhan%3A%20%0A%0ATerima%20kasih.%0A%0ASalam%2C%0A%5BNama%20Anda%5D%0A%5BKontak%20%2F%20Instansi%20(Opsional)%5D"
-                                target="_blank" rel="noopener noreferrer" class="email-badge">HUBUNGI SAYA</a></span>
-                        <span>Mari berkolaborasi & terhubung <a href="https://mail.google.com/mail/?view=cm&fs=1&to=f.azizsyaifuddin@gmail.com&su=Tanya%20Portofolio%20%2F%20Peluang%20Kolaborasi%20%E2%80%94%20Fathul%20Aziz%20Saifuddin&body=Halo%20Fathul%20Aziz%2C%0A%0ASaya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi%20terkait%3A%0A%E2%80%A2%20Perihal%20%2F%20Proyek%3A%20%0A%E2%80%A2%20Pesan%20%2F%20Kebutuhan%3A%20%0A%0ATerima%20kasih.%0A%0ASalam%2C%0A%5BNama%20Anda%5D%0A%5BKontak%20%2F%20Instansi%20(Opsional)%5D"
-                                target="_blank" rel="noopener noreferrer" class="email-badge">HUBUNGI SAYA</a></span>
+                        <span class="marquee-separator">✦</span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.91 2C6.84 2 7.16 4.21 7.16 4.21l.01 2.29h4.84v.69H5.17S2 6.83 2 11.93c0 5.08 2.77 4.9 2.77 4.9h1.64v-2.31s-.09-2.77 2.73-2.77h4.69v-.77H9.13s-2.61-.17-2.61-2.68c0-2.5 2.28-2.43 2.28-2.43h6.91s2.51.04 2.51 2.48v1.89h1.67s2.12.02 2.12-4.9c0-4.94-4.89-4.92-4.89-4.92h-5.21zm-2.07 1.55a.78.78 0 1 1 0 1.56.78.78 0 0 1 0-1.56zm4.25 8.62v.77h4.69s2.61.17 2.61 2.68c0 2.51-2.28 2.44-2.28 2.44h-6.91s-2.52-.05-2.52-2.48V13.7H7.72S6.9 13.67 6.9 18.59c0 4.94 4.88 4.92 4.88 4.92h5.22c5.07 0 4.75-2.21 4.75-2.21l-.01-2.29h-4.84v-.69h6.85S22 17.96 22 12.87c0-5.08-2.77-4.9-2.77-4.9h-1.65v2.31s.1 2.77-2.72 2.77h-4.69zm2.08 8.77a.78.78 0 1 1 0-1.56.78.78 0 0 1 0 1.56z"/></svg> <span>PYTHON</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2L3 5.3l1.36 15.34L12 23.5l7.64-2.85L21 5.3 12 2zm6.2 6.1H8.5l.26 2.9h9.18l-.75 8.36L12 21.31l-5.19-1.95-.36-4.05h2.52l.18 2.05 2.85 1.07 2.85-1.07.38-4.26H6.29L5.5 5.9h13.2l-.5 2.2z"/></svg> <span>HTML5</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2L3 5.3l1.36 15.34L12 23.5l7.64-2.86L21 5.3 12 2zm6.2 6.1H8.5l.26 2.9h9.18l-.75 8.35-5.19 1.95-5.19-1.95-.36-4.05h2.52l.18 2.05 2.85 1.07 2.85-1.07.38-4.25H6.28L5.5 5.9h13.2l-.5 2.2z"/></svg> <span>CSS3</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3 3h18v18H3V3zm14.49 13.98c-.78 1.28-2.02 1.63-3.39 1.4-.41-.07-.79-.22-1.12-.42-.51-.31-.8-.74-.88-1.32.74-.23 1.48-.44 2.23-.67.09.43.32.72.78.82.49.11 1.05-.04 1.25-.53.29-.69.04-1.57-.65-1.92-.37-.19-.77-.32-1.18-.46-.77-.26-1.55-.51-2.22-.97-.9-.62-1.28-1.5-1.13-2.58.17-1.2 1.05-2.06 2.2-2.31.78-.17 1.56-.12 2.32.14.73.25 1.28.74 1.55 1.48-.73.23-1.46.46-2.2.69-.13-.37-.36-.61-.79-.67-.4-.05-.8.07-1 .42-.23.4-.11.83.27 1.08.38.25.82.4 1.24.58.82.35 1.63.7 2.28 1.34.82.8.96 1.84.69 2.92zm-5.69-.87c-.24 1.48-1.17 2.31-2.56 2.39-1.38.08-2.39-.62-2.81-1.93.75-.24 1.49-.47 2.24-.71.18.52.5.83 1.05.77.45-.05.79-.38.84-.85.1-.96.02-1.94.02-2.91 0-1.07.02-2.14 0-3.21h2.24c-.02 2.15-.02 4.3-.02 6.45z"/></svg> <span>JAVASCRIPT</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 3C6.48 3 2 7.03 2 12s4.48 9 10 9 10-4.03 10-9-4.48-9-10-9zm-5.8 11.8h-1.6l1.8-5.6h2.8c1.5 0 2.4.7 2 2-.4 1.3-1.7 2-3.1 2h-1.2l-.7 1.6zm2.2-3.4h.8c.8 0 1.3-.3 1.5-.9.2-.5-.1-.8-.8-.8h-.8l-.7 1.7zm7.4 3.4h-1.6l1.8-5.6h2.8c1.5 0 2.4.7 2 2-.4 1.3-1.7 2-3.1 2h-1.2l-.7 1.6zm2.2-3.4h.8c.8 0 1.3-.3 1.5-.9.2-.5-.1-.8-.8-.8h-.8l-.7 1.7zm-5.2 3.4h-1.6l1.8-5.6h1.6l-1.8 5.6z"/></svg> <span>PHP</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.78 12.87c-.12-.39-.42-.69-.8-.83-.78-.29-1.57-.49-2.39-.6-1.53-.21-3.07-.15-4.57.19-.38.09-.76.2-1.12.33-.51.19-1.05.29-1.6.29-.4 0-.8-.06-1.18-.17-.79-.23-1.42-.77-1.71-1.52-.39-1.01-.22-2.14.43-3 .62-.82 1.57-1.32 2.61-1.37.52-.03 1.04.05 1.54.23.47.17.99.19 1.48.06.49-.13.91-.42 1.22-.82.38-.5.54-1.14.44-1.77-.1-.63-.44-1.19-.94-1.57-.5-.38-1.13-.56-1.76-.5-1.92.18-3.66 1.09-4.88 2.57-1.24 1.5-1.76 3.44-1.43 5.37.33 1.93 1.48 3.59 3.16 4.56.9.52 1.91.82 2.95.88 1.1.06 2.19-.11 3.23-.49.97-.36 2-.51 3.03-.45.89.05 1.77.26 2.6.63.35.16.76.12 1.08-.09.32-.22.5-.58.48-.97-.02-.38-.22-.72-.53-.94z"/></svg> <span>MYSQL</span></span>
+                        <span class="marquee-tech-pill"><i class="ri-node-tree"></i> <span>STRUKTUR DATA & ALGORITMA</span></span>
+                        <span class="marquee-tech-pill"><i class="ri-code-s-slash-line"></i> <span>WEB DEVELOPMENT</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.25 14.5c-2.4 0-4.25-1.8-4.25-4.45 0-2.85 2.1-4.75 4.65-4.75 1.65 0 2.85.75 3.3 1.8l-1.8.9c-.3-.65-.85-1-1.5-1-1.4 0-2.4 1.2-2.4 3.05 0 1.7 1.05 2.85 2.45 2.85.8 0 1.45-.45 1.8-1.15l1.7.95c-.65 1.1-1.85 1.75-3.95 1.75z"/></svg> <span>CANVA</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M14.62 3.12L7.38 15.65 3 20.88h18l-4.2-4.88-2.18-12.88zm-2.62 4.14l1.32 7.78-4.22.42 2.9-8.2zm4.12 8.2l2.36 2.74H5.52l2.84-3.34 7.76.6z"/></svg> <span>AFFINITY</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3 3h18v18H3V3zm3.5 4v10h2.4v-3.6h1.8c2.1 0 3.3-1.1 3.3-3.2 0-2.1-1.2-3.2-3.3-3.2H6.5zm2.4 2.1h1.6c.8 0 1.3.4 1.3 1.1 0 .7-.5 1.1-1.3 1.1H8.9V9.1zm6 3.4v4.5h2.2v-2.8c0-1.1.6-1.5 1.5-1.5h.3V10.4c-.8 0-1.5.4-1.8 1.1v-1h-2.2v2z"/></svg> <span>PREMIERE PRO</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3 3h18v18H3V3zm2.5 14h2.2l.7-2.3h2.8l.7 2.3h2.2L10.3 7h-2.1L5.5 17zm3.4-4.2l.9-3.2.9 3.2H8.9zm7.3 1.3c0 .8.6 1.3 1.4 1.3.7 0 1.2-.3 1.5-.7l1.4 1.1c-.6.9-1.6 1.4-2.9 1.4-2.2 0-3.5-1.5-3.5-3.5 0-2.1 1.4-3.6 3.4-3.6 2.1 0 3.2 1.4 3.2 3.3v.7h-4.5zm2.4-1.4c0-.6-.4-1.1-1.1-1.1-.6 0-1.1.4-1.2 1.1h2.3z"/></svg> <span>AFTER EFFECTS</span></span>
+                        <span class="marquee-tech-pill"><svg class="tech-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M4 6l7 5-7 5V6zm16 0l-7 5 7 5V6zm-9 6l1.2-1 1.2 1-.9.8h-.6l.3-.8z"/></svg> <span>CAPCUT</span></span>
+                        <span class="marquee-tech-pill"><i class="ri-layout-masonry-line"></i> <span>DESAIN INFOGRAFIS</span></span>
+                        <span class="marquee-tech-pill"><i class="ri-movie-2-line"></i> <span>VIDEOGRAFI & DOKUMENTASI</span></span>
+                        <span class="marquee-separator">✦</span>
                     </div>
                 </div>
             </section>
@@ -701,16 +872,21 @@
                     <span>Dukun, Gresik, Jawa Timur</span>
                 </div>
                 <div class="footer-right footer-icons">
-                    <a href="https://wa.me/6285731037913" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" title="WhatsApp (0857-3103-7913)" aria-label="WhatsApp">
+                    <a href="https://wa.me/6285731037913" target="_blank" rel="noopener noreferrer"
+                        class="footer-icon-btn" title="WhatsApp (0857-3103-7913)" aria-label="WhatsApp">
                         <i class="ri-whatsapp-line"></i>
                     </a>
-                    <a href="https://instagram.com/azesfx_" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" title="Instagram (@azesfx_)" aria-label="Instagram">
+                    <a href="https://instagram.com/azesfx_" target="_blank" rel="noopener noreferrer"
+                        class="footer-icon-btn" title="Instagram (@azesfx_)" aria-label="Instagram">
                         <i class="ri-instagram-line"></i>
                     </a>
-                    <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" title="GitHub (@azes24)" aria-label="GitHub">
+                    <a href="https://github.com/azes24" target="_blank" rel="noopener noreferrer"
+                        class="footer-icon-btn" title="GitHub (@azes24)" aria-label="GitHub">
                         <i class="ri-github-fill"></i>
                     </a>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=f.azizsyaifuddin@gmail.com&su=Tanya%20Portofolio%20%2F%20Peluang%20Kolaborasi%20%E2%80%94%20Fathul%20Aziz%20Saifuddin&body=Halo%20Fathul%20Aziz%2C%0A%0ASaya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi%20terkait%3A%0A%E2%80%A2%20Perihal%20%2F%20Proyek%3A%20%0A%E2%80%A2%20Pesan%20%2F%20Kebutuhan%3A%20%0A%0ATerima%20kasih.%0A%0ASalam%2C%0A%5BNama%20Anda%5D%0A%5BKontak%20%2F%20Instansi%20(Opsional)%5D" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" title="Email (f.azizsyaifuddin@gmail.com)" aria-label="Email">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=f.azizsyaifuddin@gmail.com&su=Tanya%20Portofolio%20%2F%20Peluang%20Kolaborasi%20%E2%80%94%20Fathul%20Aziz%20Saifuddin&body=Halo%20Fathul%20Aziz%2C%0A%0ASaya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi%20terkait%3A%0A%E2%80%A2%20Perihal%20%2F%20Proyek%3A%20%0A%E2%80%A2%20Pesan%20%2F%20Kebutuhan%3A%20%0A%0ATerima%20kasih.%0A%0ASalam%2C%0A%5BNama%20Anda%5D%0A%5BKontak%20%2F%20Instansi%20(Opsional)%5D"
+                        target="_blank" rel="noopener noreferrer" class="footer-icon-btn"
+                        title="Email (f.azizsyaifuddin@gmail.com)" aria-label="Email">
                         <i class="ri-mail-line"></i>
                     </a>
                     <button class="footer-icon-btn share-web-btn" title="Bagikan Web Ini" aria-label="Share Web Link">
