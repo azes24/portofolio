@@ -237,8 +237,8 @@ a {
 
 .nav-socials {
     text-align: center;
-    font-family: var(--font-editorial);
-    font-size: 1.1rem;
+    font-family: garamond;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     opacity: 0;
@@ -1028,7 +1028,7 @@ a {
    9. INFINITE MARQUEE CTA & FOOTER
    ========================================================================== */
 .marquee-section {
-    padding: 26px 0;
+    padding: clamp(18px, 2.5vw, 32px) 0;
     border-bottom: var(--border-line);
     overflow: hidden;
     white-space: nowrap;
@@ -1046,42 +1046,59 @@ a {
 .marquee-content {
     display: inline-flex;
     align-items: center;
+    vertical-align: middle;
 }
 
 .marquee-title-item {
     font-family: var(--font-editorial);
-    font-size: clamp(2.4rem, 5vw, 4.6rem);
+    font-size: clamp(2rem, 4.2vw, 3.8rem);
     display: inline-flex;
     align-items: center;
-    gap: 18px;
+    gap: clamp(12px, 1.5vw, 20px);
     white-space: nowrap;
     color: var(--ink-dark);
+    line-height: 1;
 }
 
 .marquee-separator {
     font-family: var(--font-editorial);
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 2.5vw, 2.4rem);
     color: var(--accent-orange);
-    padding: 0 16px;
+    padding: 0 clamp(12px, 1.8vw, 24px);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .marquee-tech-pill {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: clamp(6px, 0.8vw, 10px);
     font-family: var(--font-display);
-    font-size: clamp(1.1rem, 2.2vw, 1.65rem);
+    font-size: clamp(1rem, 1.4vw, 1.4rem);
     letter-spacing: 0.05em;
-    padding: 6px 14px;
+    line-height: 1;
+    height: clamp(38px, 4vw, 54px);
+    min-width: clamp(38px, 4vw, 54px);
+    padding: 0 clamp(10px, 1.2vw, 16px);
     border: 1.5px solid var(--ink-dark);
     background-color: var(--bg-paper);
     color: var(--ink-dark);
-    margin-right: 12px;
+    margin-right: clamp(8px, 1vw, 14px);
     white-space: nowrap;
-    border-radius: 4px;
+    border-radius: 6px;
     transition: all 0.25s ease;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+/* Square tile when the pill contains only an icon (no text label) */
+.marquee-tech-pill:not(:has(span)),
+.marquee-tech-pill.icon-only {
+    width: clamp(38px, 4vw, 54px);
+    padding: 0;
 }
 
 .marquee-tech-pill:hover {
@@ -1093,18 +1110,24 @@ a {
 
 .tech-icon-svg,
 .marquee-tech-pill i {
-    width: 20px;
-    height: 20px;
-    font-size: 20px;
+    width: clamp(22px, 2.4vw, 32px) !important;
+    height: clamp(22px, 2.4vw, 32px) !important;
+    font-size: clamp(22px, 2.4vw, 32px) !important;
     flex-shrink: 0;
     fill: currentColor;
     display: inline-block;
     vertical-align: middle;
+    transition: transform 0.25s ease;
+}
+
+.marquee-tech-pill:hover .tech-icon-svg,
+.marquee-tech-pill:hover i {
+    transform: scale(1.12);
 }
 
 .marquee-content span.email-badge-wrap {
     font-family: var(--font-editorial);
-    font-size: clamp(2.5rem, 5.5vw, 5rem);
+    font-size: clamp(2rem, 4.2vw, 3.8rem);
     margin-right: 32px;
     display: inline-flex;
     align-items: center;
@@ -1115,9 +1138,14 @@ a {
     background-color: var(--ink-dark);
     color: var(--bg-paper);
     font-family: var(--font-display);
-    font-size: clamp(2rem, 4.5vw, 4rem);
-    padding: 4px 18px;
-    border-radius: 4px;
+    font-size: clamp(1.2rem, 2.5vw, 2.4rem);
+    padding: clamp(6px, 0.7vw, 10px) clamp(12px, 1.5vw, 20px);
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
     transition: background-color 0.3s ease;
 }
 
@@ -1900,7 +1928,7 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-family: var(--font-editorial);
+    font-family: garamond;
     font-size: 1.05rem;
     color: var(--ink-muted);
     margin-top: 10px;
@@ -2105,6 +2133,8 @@ a {
     min-height: 520px;
     align-items: stretch;
     transition: all 0.4s ease;
+    padding-top: 18px;
+    /* Ruang bernapas atas agar saat buku terseleksi & terangkat (translateY) tidak terpotong */
 }
 
 /* Individual Project Book on Shelf */
@@ -2116,7 +2146,10 @@ a {
     box-shadow: 5px 5px 0px rgba(28, 28, 25, 0.2);
     overflow: hidden;
     position: relative;
-    transition: flex 0.45s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: flex 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+        transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
 /* Collapsed Book Spine State (Side-by-side standing on shelf) */
@@ -2124,24 +2157,32 @@ a {
     flex: 0 0 88px;
     cursor: pointer;
     background-color: rgba(28, 28, 25, 0.03);
+    transition: flex 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+        transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
-.project-book-card:not(.active):hover {
-    flex: 0 0 98px;
-    box-shadow: 8px 8px 0px rgba(28, 28, 25, 0.3);
-    background-color: rgba(28, 28, 25, 0.07);
+/* Hover: Buku terseleksi sesuai tema (terangkat keluar dari rak, border oranye vintage, spine invert tegas) */
+.projects-shelf-container:not(.grid-mode) .project-book-card:not(.active):hover {
+    flex: 0 0 88px;
+    transform: translateY(-14px);
+    border-color: var(--accent-orange);
+    box-shadow: 6px 14px 0px rgba(180, 59, 18, 0.45), 0 16px 24px rgba(28, 28, 25, 0.25);
+    z-index: 10;
 }
 
 .project-book-card:not(.active) .project-spread {
     display: none;
 }
 
-/* Active / Opened Book State (Unfolded spread on shelf) */
+/* Active / Opened Book State (Unfolded spread on shelf saat diklik) */
 .project-book-card.active {
     flex: 1 1 65%;
     min-width: 480px;
     box-shadow: 10px 10px 0px rgba(28, 28, 25, 0.28);
     border-color: var(--ink-dark);
+    transform: none;
 }
 
 .project-book-card.active .project-spine {
@@ -2168,12 +2209,37 @@ a {
     user-select: none;
     position: relative;
     background: linear-gradient(180deg, rgba(28, 28, 25, 0.05) 0%, rgba(28, 28, 25, 0.02) 100%);
-    transition: background-color 0.35s ease, color 0.35s ease, width 0.35s ease;
+    transition: background-color 0.35s ease, color 0.35s ease, width 0.35s ease, border-color 0.35s ease;
 }
 
+/* Highlight Elemen Spine saat terseleksi (hover) */
 .project-book-card:not(.active):hover .project-spine {
     background-color: var(--ink-dark);
     color: var(--bg-paper);
+}
+
+.project-book-card:not(.active):hover .spine-vol {
+    color: var(--accent-orange);
+    transition: color 0.3s ease;
+}
+
+.project-book-card:not(.active):hover .spine-head-band,
+.project-book-card:not(.active):hover .spine-tail-band {
+    border-color: var(--accent-orange);
+    opacity: 1;
+}
+
+.project-book-card:not(.active):hover .spine-tech-badge {
+    background-color: var(--accent-orange);
+    color: #ffffff;
+    border-color: var(--accent-orange);
+    box-shadow: 0 2px 8px rgba(180, 59, 18, 0.5);
+    transform: scale(1.08);
+}
+
+.project-book-card:not(.active):hover .spine-status-icon {
+    color: var(--accent-orange);
+    transform: scale(1.25);
 }
 
 .spine-head-band,
@@ -2183,6 +2249,7 @@ a {
     border-top: 2px solid currentColor;
     border-bottom: 2px solid currentColor;
     opacity: 0.45;
+    transition: border-color 0.3s ease, opacity 0.3s ease;
 }
 
 .spine-vol {
@@ -2190,6 +2257,7 @@ a {
     font-size: 1.15rem;
     letter-spacing: 0.1em;
     margin-top: 4px;
+    transition: color 0.3s ease;
 }
 
 .spine-vertical-wrap {
@@ -2232,10 +2300,12 @@ a {
     border: 1px solid currentColor;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .spine-status-icon {
     font-size: 1.35rem;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 /* Expanded Book Spread Container */
@@ -2331,7 +2401,7 @@ a {
     width: 100%;
 }
 
-.projects-shelf-container.grid-mode + .shelf-wooden-ledge {
+.projects-shelf-container.grid-mode+.shelf-wooden-ledge {
     display: none;
 }
 
@@ -3275,10 +3345,6 @@ a {
         line-height: 1.35 !important;
     }
 
-    .cv-meta-pill i {
-        margin-top: 2px !important;
-        flex-shrink: 0 !important;
-    }
 
     /* Awards Ledger (about.html) Structured 2-row grid */
     .selected-awards-section {
@@ -3407,15 +3473,46 @@ a {
     }
 
     /* Marquee on Mobile */
-    .marquee-content span {
-        font-size: 1.6rem !important;
-        margin-right: 20px !important;
+    .marquee-section {
+        padding: 16px 0 !important;
+    }
+
+    .marquee-title-item {
+        font-size: clamp(1.6rem, 5vw, 2.2rem) !important;
         gap: 10px !important;
     }
 
     .email-badge {
-        font-size: 1.25rem !important;
+        font-size: clamp(1.05rem, 3.4vw, 1.35rem) !important;
         padding: 4px 10px !important;
+        border-radius: 4px !important;
+    }
+
+    .marquee-separator {
+        font-size: 1.25rem !important;
+        padding: 0 10px !important;
+    }
+
+    .marquee-tech-pill {
+        height: 36px !important;
+        min-width: 36px !important;
+        margin-right: 8px !important;
+        border-radius: 5px !important;
+        border-width: 1.2px !important;
+        padding: 0 10px !important;
+    }
+
+    .marquee-tech-pill:not(:has(span)),
+    .marquee-tech-pill.icon-only {
+        width: 36px !important;
+        padding: 0 !important;
+    }
+
+    .tech-icon-svg,
+    .marquee-tech-pill i {
+        width: 20px !important;
+        height: 20px !important;
+        font-size: 20px !important;
     }
 
     /* Fullscreen Nav Overlay */

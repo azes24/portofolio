@@ -669,6 +669,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const viewGridBtn = document.getElementById("viewGridBtn");
 
     // Interaktivitas Horizontal Bookshelf Proyek (Rak Kesamping)
+    // Hover: buku terseleksi visual & terangkat sesuai tema (ditangani via CSS :hover)
+    // Klik: membuka buku proyek menjadi aktif
     if (projectBookCards.length > 0) {
         projectBookCards.forEach((card) => {
             card.addEventListener("click", (e) => {
@@ -678,15 +680,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Jangan cegah klik jika pengguna mengklik link tombol Source Code atau Demo
                 if (e.target.closest("a") || e.target.closest("button")) return;
 
-                projectBookCards.forEach((c) => c.classList.remove("active"));
-                card.classList.add("active");
-            });
-
-            // Hover interaktif di Desktop untuk sensasi menarik buku dari rak
-            card.addEventListener("mouseenter", () => {
-                if (window.innerWidth < 992) return;
-                if (projectsShelfContainer && projectsShelfContainer.classList.contains("grid-mode")) return;
-
+                // Buka buku yang diklik, tutup buku lainnya
                 projectBookCards.forEach((c) => c.classList.remove("active"));
                 card.classList.add("active");
             });
